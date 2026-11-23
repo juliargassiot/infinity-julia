@@ -1,0 +1,16 @@
+name: Steam Deck install check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Install the way the Deck does
+        run: curl -fsS https://juliargassiot.github.io/infinity-julia/deck | sh
+      - name: A second update finds nothing new
+        run: ~/.local/share/infinity-julia/play update | grep "Already up to date"
+      - name: The game starts
+        run: ~/.local/share/infinity-julia/play play --headless --quit-after 120

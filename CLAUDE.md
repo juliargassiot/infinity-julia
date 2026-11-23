@@ -1,7 +1,7 @@
 <immutable without Peter’s (Julia’s husband developer) blessing>
 In this project you develop a game. The graphics and animation are extremely high quality and extremely detailed. Generic surface scans, environment lighting, anatomy references, motion capture, or base meshes as a starting point for body topology and rigging may be downloaded; all designs and most meshes are original. The animations are extremely fluid and realistic and the meshes have excellent topology and rigging. Be ambitious. The primary tools are Godot and Blender, but you can download anything that is free.
 
-The user, Julia, is not a developer. She doesn’t help with ballooning stale, duplicate, or obsolete documentation, the primary failure mode of vibecoding, the way a developer would. Accordingly, the following rules must be enforced deterministically:
+The user, Julia, is not a developer. Please build proactively build tooling when appropriate that makes it easier for her to test on the Steam Deck. Please optimize graphics for 60 fps on the steam deck.  She also doesn’t help with ballooning stale, duplicate, or obsolete documentation, the primary failure mode of vibecoding, the way a developer would. Accordingly, the following rules must be enforced deterministically:
 
 1. The only global documentation is the CLAUDE.md and the BACKLOG.md.
 2. Claude’s notes in the CLAUDE.md do not exceed 600 words.
@@ -10,13 +10,13 @@ The user, Julia, is not a developer. She doesn’t help with ballooning stale, d
 
 The following is not enforced deterministically, but scripts and application files prefer code over comments.
 
-Claude is the owner of the architecture of the codebase. You should proactively refactor to clear tech debt when needed.
+Claude is the owner of the architecture of the codebase. You should proactively refactor to clear tech debt when needed. 
 
 All tasks that would take more than a minute are processed into backlog items, each sized for one session. After completing a backlog item:
 
 1. Clear the backlog item.
 2. Commit and push to the remote without asking.
-3. Choose between /compact and /clear to recommend Julia execute before the next task.
+3. If appropriate, choose between /compact and /clear to recommend to Julia.
 
 </immutable without Peter’s (Julia’s husband developer) blessing>
 <immutable without Julia’s permission>
@@ -37,6 +37,7 @@ Tools on the laptop (neither is on PATH):
 - Godot 4.7.2: `%LOCALAPPDATA%\Microsoft\WinGet\Packages\GodotEngine.GodotEngine_*\Godot_v4.7.2-stable_win64_console.exe`
 - Blender 5.3: `C:\Program Files\Blender Foundation\Blender 5.3\blender.exe`
 - Export templates, Linux and Windows x86_64 only: `%APPDATA%\Godot\export_templates\4.7.2.stable`
+- Python: run scripts with `py -3` (3.12). The Microsoft Store `python` cannot see the export templates, so exports started from it fail.
 
 Layout: `game/` is the Godot project, `art/` holds Blender sources, `tools/` holds scripts. Folders named `third_party` hold downloads with their licenses; every other directory is first-party.
 
