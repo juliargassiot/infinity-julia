@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"$CLAUDE_PROJECT_DIR/tools/hooks/pre-commit\" --hook",
+            "timeout": 30,
+            "statusMessage": "Checking the documentation rules"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"$CLAUDE_PROJECT_DIR/tools/hooks/pre-commit\" --hook",
+            "timeout": 30,
+            "statusMessage": "Checking the documentation rules"
+          }
+        ]
+      }
+    ]
+  }
+}

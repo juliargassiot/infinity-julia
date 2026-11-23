@@ -1,6 +1,8 @@
 * text=auto
 
 *.gd text eol=lf
+*.py text eol=lf
+tools/hooks/* text eol=lf
 *.gdshader text eol=lf
 *.gdshaderinc text eol=lf
 *.tscn text eol=lf

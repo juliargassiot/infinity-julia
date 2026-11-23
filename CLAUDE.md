@@ -10,6 +10,8 @@ The user, Julia, is not a developer. She doesn’t help with ballooning stale, d
 
 The following is not enforced deterministically, but scripts and application files prefer code over comments.
 
+Claude is the owner of the architecture of the codebase. You should proactively refactor to clear tech debt when needed.
+
 All tasks that would take more than a minute are processed into backlog items, each sized for one session. After completing a backlog item:
 
 1. Clear the backlog item.
@@ -37,6 +39,8 @@ Tools on the laptop (neither is on PATH):
 - Export templates, Linux and Windows x86_64 only: `%APPDATA%\Godot\export_templates\4.7.2.stable`
 
 Layout: `game/` is the Godot project, `art/` holds Blender sources, `tools/` holds scripts. Folders named `third_party` hold downloads with their licenses; every other directory is first-party.
+
+The documentation rules are enforced by `tools/check_docs.py`. It runs as the git pre-commit hook (`tools/hooks`) and as Claude hooks (`.claude/settings.json`). A fresh clone needs `git config core.hooksPath tools/hooks`. The checker pins a hash of each immutable section; update a hash only when the person named in that section asked for the change.
 
 Check visual work by rendering it with `tools/screenshot.gd` and looking at the PNG.
 
