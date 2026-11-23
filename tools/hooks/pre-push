@@ -1,0 +1,4 @@
+#!/bin/sh
+here="$(dirname "$0")"
+grep -q " refs/heads/main " || exit 0
+exec "$here/run-python" "$here/../deck/publish.py" </dev/null

@@ -42,6 +42,10 @@ Layout: `game/` is the Godot project, `art/` holds Blender sources, `tools/` hol
 
 The documentation rules are enforced by `tools/check_docs.py`. It runs as the git pre-commit hook (`tools/hooks`) and as Claude hooks (`.claude/settings.json`). A fresh clone needs `git config core.hooksPath tools/hooks`. The checker pins a hash of each immutable section; update a hash only when the person named in that section asked for the change.
 
+The repository is public, so `third_party` folders may only hold files whose licenses allow redistribution.
+
+Every push to `main` publishes a Steam Deck build that the Deck fetches by itself (`tools/deck`). The push fails if the export fails; a GitHub workflow then test-installs the build on Linux. Check that run after pushing game changes: `gh run list --workflow deck.yml`.
+
 Check visual work by rendering it with `tools/screenshot.gd` and looking at the PNG.
 
 The laptop GPU is an Intel Iris Xe (D3D12, Forward+). Heavy effects run slowly here; the Steam Deck is the performance target.

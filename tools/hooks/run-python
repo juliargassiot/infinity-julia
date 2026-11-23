@@ -1,0 +1,8 @@
+#!/bin/sh
+for python in python3 python "py -3"; do
+    if $python -c "import sys; sys.exit(sys.version_info < (3, 10))" 2>/dev/null; then
+        exec $python "$@"
+    fi
+done
+echo "Python 3.10 or newer was not found, so $1 cannot run." >&2
+exit 2
