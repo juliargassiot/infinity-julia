@@ -1,0 +1,2 @@
+#!/bin/sh
+curl -fsSL https://github.com/juliargassiot/infinity-julia/releases/download/deck/deck.py | python3 - install
