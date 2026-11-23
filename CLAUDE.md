@@ -31,4 +31,15 @@ The art style of this game is similar to Infinity Nikki — stylized anime-fanta
 </immutable without Julia’s permission>
 <Claude’s notes>
 
+Tools on the laptop (neither is on PATH):
+- Godot 4.7.2: `%LOCALAPPDATA%\Microsoft\WinGet\Packages\GodotEngine.GodotEngine_*\Godot_v4.7.2-stable_win64_console.exe`
+- Blender 5.3: `C:\Program Files\Blender Foundation\Blender 5.3\blender.exe`
+- Export templates, Linux and Windows x86_64 only: `%APPDATA%\Godot\export_templates\4.7.2.stable`
+
+Layout: `game/` is the Godot project, `art/` holds Blender sources, `tools/` holds scripts. Folders named `third_party` hold downloads with their licenses; every other directory is first-party.
+
+Check visual work by rendering it with `tools/screenshot.gd` and looking at the PNG.
+
+The laptop GPU is an Intel Iris Xe (D3D12, Forward+). Heavy effects run slowly here; the Steam Deck is the performance target.
+
 </Claude’s notes>
