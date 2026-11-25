@@ -1,0 +1,34 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://player/placeholder_body.gd" id="1_script"]
+
+[sub_resource type="StandardMaterial3D" id="skin"]
+albedo_color = Color(0.96, 0.72, 0.8, 1)
+roughness = 0.45
+
+[sub_resource type="CapsuleMesh" id="capsule"]
+material = SubResource("skin")
+radius = 0.28
+height = 1.6
+
+[sub_resource type="StandardMaterial3D" id="visor_material"]
+albedo_color = Color(0.98, 0.95, 0.9, 1)
+roughness = 0.3
+
+[sub_resource type="SphereMesh" id="visor"]
+material = SubResource("visor_material")
+radius = 0.12
+height = 0.24
+
+[node name="PlaceholderBody" type="Node3D"]
+script = ExtResource("1_script")
+
+[node name="Lean" type="Node3D" parent="."]
+
+[node name="Capsule" type="MeshInstance3D" parent="Lean"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("capsule")
+
+[node name="Visor" type="MeshInstance3D" parent="Lean"]
+transform = Transform3D(1.6, 0, 0, 0, 0.6, 0, 0, 0, 0.7, 0, 1.38, 0.2)
+mesh = SubResource("visor")
