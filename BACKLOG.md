@@ -26,7 +26,7 @@ Not started. Needs item 3.
 ## 7. Race designs
 
 ### Task description
-Design each race's look on the base character, in the Infinity Nikki style with a touch of spookiness: werewolf ears, tail and claws; vampire fangs, pale glow and red eyes; mermaid scales and a tail form in water; witch markings and familiar; fae wings and pointed ears. Start with design sheets rendered in Blender for Julia to choose from, then build the chosen designs.
+Design each race's look on the base character, in the Infinity Nikki style with a touch of spookiness: werewolf ears, tail and claws; vampire fangs, pale glow and red eyes; mermaid scales and a tail form in water; witch markings and a hat; fae wings and pointed ears. Start with design sheets rendered in Blender for Julia to choose from, then build the chosen designs.
 
 ### Open questions
 - Can werewolves fully transform, and do mermaids get legs on land?
@@ -78,3 +78,40 @@ Gates close the roads to locked lands, but a player can still glide over the str
 
 ### Status
 In progress on a branch. The map is in `game/world/`; terrain shapes and paths bake into one heightmap.
+
+## 13. Familiar companion
+
+### Task description
+A familiar, a magical pet, follows the player around the world: it trots after her, waits, plays idle animations and reacts to her (happy when she returns, curious about objects). The player picks one of several forms, each with its own animal vibe (fox-like, cat-like and others) but all clearly magical, and customizes its colors. Build the follow behavior and the first two forms with models, rigs and animations, plus the choice and coloring screen. Cute but able to look a little eerie at night.
+
+### Open questions
+- Which forms beyond fox and cat: owl, bunny, dragonling, moth?
+- Does the familiar help in quests or battles, or is it a companion only?
+- Is it chosen in the character creator or met in a quest?
+
+### Status
+Not started. Movement is done in `game/player/`.
+
+## 14. Wardrobe and outfits
+
+### Task description
+The heart of the fashion sub-game: outfits made of swappable pieces (hair accessory, top, bottom or dress, shoes, accessories) that fit the player character and move with cloth physics, a wardrobe screen to dress her, and the sparkly transformation effect when switching outfits. Each piece carries style tags (elegant, gothic, cute, wild, ethereal and so on) that events can judge. Make three complete starter outfits in clearly different styles. The tailor's shop in the village will later sell and craft pieces.
+
+### Open questions
+- How are new pieces earned: bought, crafted at the tailor, quest rewards, or all three?
+
+### Status
+Not started. Needs item 3.
+
+## 15. First race social event
+
+### Task description
+Build the event system and the first event, a witch marsh gathering, as the game's version of a farming-sim festival. The player is invited through a quest, arrives at a decorated venue with a dress code, mingles with NPCs in conversations where good answers win favor, and is judged on how well her outfit fits the event's style tags. A strong showing earns standing toward a title like "It Girl". Each later race gets its own event built on the same system.
+
+### Open questions
+- What is the title called?
+- Do events happen on a calendar, like festivals, or when the story reaches them?
+- Can the player fail an event and try again?
+
+### Status
+Not started. Needs items 10 and 14.
