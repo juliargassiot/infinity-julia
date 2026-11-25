@@ -4784,7 +4784,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.664375, 19.332075, -91.41
 shape = SubResource("CylinderShape3D_wa0fg")
 
 [node name="Trunk16" type="CollisionShape3D" parent="Trees/Trunks" unique_id=985029658]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.937023, 2.5818183, 121.27983)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.937023, 3.4218183, 121.27983)
 shape = SubResource("CylinderShape3D_8gjum")
 
 [node name="Trunk17" type="CollisionShape3D" parent="Trees/Trunks" unique_id=1730562681]
@@ -4820,7 +4820,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113.34168, 17.50549, -57.283
 shape = SubResource("CylinderShape3D_u207u")
 
 [node name="Trunk25" type="CollisionShape3D" parent="Trees/Trunks" unique_id=286604041]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.00122, 13.293064, -26.868662)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.00122, 14.273064, -26.868662)
 shape = SubResource("CylinderShape3D_k7qsb")
 
 [node name="Trunk26" type="CollisionShape3D" parent="Trees/Trunks" unique_id=944659769]
@@ -4852,7 +4852,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.65563, 11.506396, -78.5433
 shape = SubResource("CylinderShape3D_2n74j")
 
 [node name="Trunk33" type="CollisionShape3D" parent="Trees/Trunks" unique_id=70948629]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.202106, 3.7017345, 139.97363)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.202106, 67.7817345, 139.97363)
 shape = SubResource("CylinderShape3D_icddn")
 
 [node name="Trunk34" type="CollisionShape3D" parent="Trees/Trunks" unique_id=1096018270]
@@ -4868,7 +4868,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.43073, 4.945462, 87.87247
 shape = SubResource("CylinderShape3D_0ysjx")
 
 [node name="Trunk37" type="CollisionShape3D" parent="Trees/Trunks" unique_id=1804024321]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.977825, 5.1321363, 105.22454)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.977825, 25.5521363, 105.22454)
 shape = SubResource("CylinderShape3D_n1oby")
 
 [node name="Trunk38" type="CollisionShape3D" parent="Trees/Trunks" unique_id=820028072]
@@ -4916,7 +4916,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.77538, 24.934717, -98.140
 shape = SubResource("CylinderShape3D_l7qm3")
 
 [node name="Trunk49" type="CollisionShape3D" parent="Trees/Trunks" unique_id=963029063]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.9977, 14.608244, -19.494019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.9977, 14.678244, -19.494019)
 shape = SubResource("CylinderShape3D_i7q65")
 
 [node name="Trunk50" type="CollisionShape3D" parent="Trees/Trunks" unique_id=1689665935]
@@ -4964,11 +4964,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.05137, 18.778429, -26.808
 shape = SubResource("CylinderShape3D_da4bo")
 
 [node name="Trunk61" type="CollisionShape3D" parent="Trees/Trunks" unique_id=1085400823]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.23496, 14.224856, 119.45032)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.23496, 21.434856, 119.45032)
 shape = SubResource("CylinderShape3D_ct64n")
 
 [node name="Trunk62" type="CollisionShape3D" parent="Trees/Trunks" unique_id=920698239]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.624542, 8.2061405, 101.59642)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.624542, 57.2161405, 101.59642)
 shape = SubResource("CylinderShape3D_rxhyf")
 
 [node name="Trunk63" type="CollisionShape3D" parent="Trees/Trunks" unique_id=1892371843]
@@ -5175,7 +5175,7 @@ mesh = SubResource("SphereMesh_bks34")
 shape = SubResource("SphereShape3D_unujt")
 
 [node name="Boulder2" type="MeshInstance3D" parent="Gates/MermaidCoastGate/Closed" unique_id=2024997645]
-transform = Transform3D(0.88416314, 0, -0.4671783, 0, 1, 0, 0.4671783, 0, 0.88416314, 5.3486032, 0.89762014, 0.2304287)
+transform = Transform3D(0.88416314, 0, -0.4671783, 0, 1, 0, 0.4671783, 0, 0.88416314, 5.3486032, 4.18762014, 0.2304287)
 mesh = SubResource("SphereMesh_j1wlb")
 
 [node name="Body" type="StaticBody3D" parent="Gates/MermaidCoastGate/Closed/Boulder2" unique_id=1662431865]
@@ -5184,7 +5184,7 @@ mesh = SubResource("SphereMesh_j1wlb")
 shape = SubResource("SphereShape3D_r3ni5")
 
 [node name="Boulder3" type="MeshInstance3D" parent="Gates/MermaidCoastGate/Closed" unique_id=1241734944]
-transform = Transform3D(0.08769375, 0, 0.99614745, 0, 1, 0, -0.99614745, 0, 0.08769375, -5.613198, 0.7701236, -1.5007327)
+transform = Transform3D(0.08769375, 0, 0.99614745, 0, 1, 0, -0.99614745, 0, 0.08769375, -5.613198, 7.7401236, -1.5007327)
 mesh = SubResource("SphereMesh_q5jhu")
 
 [node name="Body" type="StaticBody3D" parent="Gates/MermaidCoastGate/Closed/Boulder3" unique_id=958794503]
@@ -5193,7 +5193,7 @@ mesh = SubResource("SphereMesh_q5jhu")
 shape = SubResource("SphereShape3D_61fx3")
 
 [node name="Boulder4" type="MeshInstance3D" parent="Gates/MermaidCoastGate/Closed" unique_id=512609295]
-transform = Transform3D(0.80776983, 0, -0.589498, 0, 1, 0, 0.589498, 0, 0.80776983, 3.7030983, 1.0178378, 0.9146521)
+transform = Transform3D(0.80776983, 0, -0.589498, 0, 1, 0, 0.589498, 0, 0.80776983, 3.7030983, 2.0978378, 0.9146521)
 mesh = SubResource("SphereMesh_ix68o")
 
 [node name="Body" type="StaticBody3D" parent="Gates/MermaidCoastGate/Closed/Boulder4" unique_id=1295319910]
@@ -5202,7 +5202,7 @@ mesh = SubResource("SphereMesh_ix68o")
 shape = SubResource("SphereShape3D_v3aoa")
 
 [node name="Boulder5" type="MeshInstance3D" parent="Gates/MermaidCoastGate/Closed" unique_id=1885530914]
-transform = Transform3D(0.9993944, 0, 0.034796994, 0, 1, 0, -0.034796994, 0, 0.9993944, -2.917778, 0.72909665, -0.100178)
+transform = Transform3D(0.9993944, 0, 0.034796994, 0, 1, 0, -0.034796994, 0, 0.9993944, -2.917778, 1.48909665, -0.100178)
 mesh = SubResource("SphereMesh_o1xqc")
 
 [node name="Body" type="StaticBody3D" parent="Gates/MermaidCoastGate/Closed/Boulder5" unique_id=1419805449]
@@ -5220,7 +5220,7 @@ mesh = SubResource("SphereMesh_i8u4p")
 shape = SubResource("SphereShape3D_1lxw6")
 
 [node name="Boulder7" type="MeshInstance3D" parent="Gates/MermaidCoastGate/Closed" unique_id=1333608475]
-transform = Transform3D(0.42972025, 0, 0.9029621, 0, 1, 0, -0.9029621, 0, 0.42972025, -4.5087557, 2.0471244, 1.3467159)
+transform = Transform3D(0.42972025, 0, 0.9029621, 0, 1, 0, -0.9029621, 0, 0.42972025, -4.5087557, 5.7171244, 1.3467159)
 mesh = SubResource("SphereMesh_j1lsl")
 
 [node name="Body" type="StaticBody3D" parent="Gates/MermaidCoastGate/Closed/Boulder7" unique_id=37572021]
@@ -5238,7 +5238,7 @@ mesh = SubResource("SphereMesh_i2lcf")
 shape = SubResource("SphereShape3D_4je30")
 
 [node name="Boulder9" type="MeshInstance3D" parent="Gates/MermaidCoastGate/Closed" unique_id=1178796523]
-transform = Transform3D(-0.09643284, 0, 0.9953395, 0, 1, 0, -0.9953395, 0, -0.09643284, 5.926057, 2.438683, 1.2348988)
+transform = Transform3D(-0.09643284, 0, 0.9953395, 0, 1, 0, -0.9953395, 0, -0.09643284, 5.926057, 7.408683, 1.2348988)
 mesh = SubResource("SphereMesh_07nn4")
 
 [node name="Body" type="StaticBody3D" parent="Gates/MermaidCoastGate/Closed/Boulder9" unique_id=1115581782]
@@ -5255,7 +5255,7 @@ shape = SubResource("BoxShape3D_g8cxs")
 [node name="Open" type="Node3D" parent="Gates/MermaidCoastGate" unique_id=1239868363]
 
 [node name="Boulder" type="MeshInstance3D" parent="Gates/MermaidCoastGate/Open" unique_id=1883151279]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 11.87, 0)
 mesh = SubResource("SphereMesh_ukt32")
 
 [node name="Body" type="StaticBody3D" parent="Gates/MermaidCoastGate/Open/Boulder" unique_id=1078752467]
@@ -5264,7 +5264,7 @@ mesh = SubResource("SphereMesh_ukt32")
 shape = SubResource("SphereShape3D_y3crn")
 
 [node name="Boulder2" type="MeshInstance3D" parent="Gates/MermaidCoastGate/Open" unique_id=351493752]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 7.48, 0)
 mesh = SubResource("SphereMesh_178qr")
 
 [node name="Body" type="StaticBody3D" parent="Gates/MermaidCoastGate/Open/Boulder2" unique_id=1422321397]
@@ -5273,7 +5273,7 @@ mesh = SubResource("SphereMesh_178qr")
 shape = SubResource("SphereShape3D_jbsbe")
 
 [node name="Sign" type="Node3D" parent="Gates/MermaidCoastGate" unique_id=1045496996]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 1.76, -3)
 
 [node name="Post" type="MeshInstance3D" parent="Gates/MermaidCoastGate/Sign" unique_id=830188890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -5478,7 +5478,7 @@ shape = SubResource("BoxShape3D_jly8o")
 [node name="Open" type="Node3D" parent="Gates/WerewolfForestGate" unique_id=1823769530]
 
 [node name="Log" type="MeshInstance3D" parent="Gates/WerewolfForestGate/Open" unique_id=562493786]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -6.5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -6.5, 11.73, 0)
 mesh = SubResource("CylinderMesh_jkfnd")
 
 [node name="Body" type="StaticBody3D" parent="Gates/WerewolfForestGate/Open/Log" unique_id=671662964]
@@ -5487,7 +5487,7 @@ mesh = SubResource("CylinderMesh_jkfnd")
 shape = SubResource("CylinderShape3D_o44va")
 
 [node name="Log2" type="MeshInstance3D" parent="Gates/WerewolfForestGate/Open" unique_id=889619331]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 6.5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 6.5, 6.41, 0)
 mesh = SubResource("CylinderMesh_v1st3")
 
 [node name="Body" type="StaticBody3D" parent="Gates/WerewolfForestGate/Open/Log2" unique_id=32937660]
@@ -5496,7 +5496,7 @@ mesh = SubResource("CylinderMesh_v1st3")
 shape = SubResource("CylinderShape3D_83efh")
 
 [node name="Sign" type="Node3D" parent="Gates/WerewolfForestGate" unique_id=109171678]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.63, -3)
 
 [node name="Post" type="MeshInstance3D" parent="Gates/WerewolfForestGate/Sign" unique_id=38945013]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -5540,7 +5540,7 @@ visibility_range_fade_mode = 1
 mesh = SubResource("SphereMesh_og47p")
 
 [node name="Rose2" type="MeshInstance3D" parent="Gates/VampireEstateGate/Closed" unique_id=2052531990]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.74707, 1.1252385, -1.573995)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.74707, 14.6452385, -1.573995)
 cast_shadow = 0
 visibility_range_end = 80.0
 visibility_range_end_margin = 10.0
@@ -5548,7 +5548,7 @@ visibility_range_fade_mode = 1
 mesh = SubResource("SphereMesh_45wfh")
 
 [node name="Rose3" type="MeshInstance3D" parent="Gates/VampireEstateGate/Closed" unique_id=260160614]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.62768, 3.9585733, -0.1985116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.62768, 11.1985733, -0.1985116)
 cast_shadow = 0
 visibility_range_end = 80.0
 visibility_range_end_margin = 10.0
@@ -5556,7 +5556,7 @@ visibility_range_fade_mode = 1
 mesh = SubResource("SphereMesh_xhrxd")
 
 [node name="Rose4" type="MeshInstance3D" parent="Gates/VampireEstateGate/Closed" unique_id=566926405]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.292775, 3.3117645, 0.5156516)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.292775, 6.3817645, 0.5156516)
 cast_shadow = 0
 visibility_range_end = 80.0
 visibility_range_end_margin = 10.0
@@ -5564,7 +5564,7 @@ visibility_range_fade_mode = 1
 mesh = SubResource("SphereMesh_u6n7h")
 
 [node name="Rose5" type="MeshInstance3D" parent="Gates/VampireEstateGate/Closed" unique_id=1627683815]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5678844, 2.6101294, 0.38802683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5678844, 3.0801294, 0.38802683)
 cast_shadow = 0
 visibility_range_end = 80.0
 visibility_range_end_margin = 10.0
@@ -5591,7 +5591,7 @@ shape = SubResource("BoxShape3D_07otp")
 multimesh = SubResource("MultiMesh_wi8lr")
 
 [node name="Rose" type="MeshInstance3D" parent="Gates/VampireEstateGate/Open" unique_id=392161994]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.179399, 2.195511, -0.19067085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.179399, 4.445511, -0.19067085)
 cast_shadow = 0
 visibility_range_end = 80.0
 visibility_range_end_margin = 10.0
@@ -5599,7 +5599,7 @@ visibility_range_fade_mode = 1
 mesh = SubResource("SphereMesh_y6j4m")
 
 [node name="Rose2" type="MeshInstance3D" parent="Gates/VampireEstateGate/Open" unique_id=1783671878]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40425, 1.3437629, 0.3192556)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40425, 6.0237629, 0.3192556)
 cast_shadow = 0
 visibility_range_end = 80.0
 visibility_range_end_margin = 10.0
@@ -5610,7 +5610,7 @@ mesh = SubResource("SphereMesh_pobno")
 multimesh = SubResource("MultiMesh_gg0y0")
 
 [node name="Rose3" type="MeshInstance3D" parent="Gates/VampireEstateGate/Open" unique_id=1039120834]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.443698, 2.8710814, -0.99196476)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.443698, 4.1610814, -0.99196476)
 cast_shadow = 0
 visibility_range_end = 80.0
 visibility_range_end_margin = 10.0
@@ -5618,7 +5618,7 @@ visibility_range_fade_mode = 1
 mesh = SubResource("SphereMesh_iqj8a")
 
 [node name="Rose4" type="MeshInstance3D" parent="Gates/VampireEstateGate/Open" unique_id=307309097]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.525177, 2.3935747, 0.83975995)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.525177, 8.9935747, 0.83975995)
 cast_shadow = 0
 visibility_range_end = 80.0
 visibility_range_end_margin = 10.0
@@ -5626,7 +5626,7 @@ visibility_range_fade_mode = 1
 mesh = SubResource("SphereMesh_4r8yn")
 
 [node name="Sign" type="Node3D" parent="Gates/VampireEstateGate" unique_id=691195030]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 1.01, -3)
 
 [node name="Post" type="MeshInstance3D" parent="Gates/VampireEstateGate/Sign" unique_id=1277705068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

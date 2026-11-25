@@ -2,21 +2,22 @@
 
 The map. `../main.tscn` is its root, a `World`: sky, sun, terrain, water, the player, and one `WorldArea` per area.
 
-- `world_area.gd`: an area is its own scene in `areas/`, built around its origin (the area's center). The World loads it on a background thread when the camera comes within `load_margin` of its `radius` and frees it beyond `unload_margin`. Areas near the camera at start load before the first frame. A new area is a new scene plus a `WorldArea` entry.
-- `area_gate.gd`: a natural gate on a road. `Closed` holds the obstacle and an invisible blocker, `Open` what replaces it. `World.open_gate(&"witch_marsh")` opens one; the World remembers it while areas reload. The ids are the land names.
-- `terrain/`: one heightmap for the whole map with matching collision, and a skirt carrying its edges to the horizon. `TerrainShape` markers set the land's height, `TerrainPath` roads and the stream are pressed into it, and the Terrain's Bake button (inspector) rewrites `heightmap.res`. `Terrain.height_at()` gives the ground height.
+- `world_area.gd`: an area is its own scene in `areas/`, built around its center. The World loads it in the background when the camera comes within `load_margin` of its `radius`, frees it beyond `unload_margin`; nearby areas load before the first frame. A new area is a scene plus a `WorldArea`.
+- `area_gate.gd`: a natural gate: `Closed` holds the obstacle and an invisible blocker, `Open` what replaces it. `World.open_gate(&"witch_marsh")` opens one (ids are land names); it stays open while areas reload.
+- `terrain/`: one heightmap with collision, and a skirt carrying its edges to the horizon. `TerrainShape` markers set heights, then `TerrainPath` ridges, roads and the stream are pressed in; the Terrain's Bake button rewrites `heightmap.res`.
+- `deep_water.gd`: whoever sinks a meter under water returns to where she last stood dry.
 - `blockout/`: the gray-box palette.
 
 ## Layout
 
-Crossroads Village sits on a plateau at the center: a square with a fountain and signpost, the tailor's outfit shop, magic shop, inn, quest notice board, clock tower, windmill, an old tree and houses. North is -Z. Lands in their opening order, which grows spookier:
+Crossroads Village sits on a plateau at the center: square, fountain, signpost, tailor, magic shop, inn, notice board, clock tower, windmill, old tree, houses. North is -Z. Lands in opening order, growing spookier:
 
 | | land | direction | gate |
 |---|---|---|---|
-| 1 | witch marsh | south, 80 m | broken bridge over the stream ravine |
+| 1 | witch marsh | south, across the stream | broken bridge |
 | 2 | mermaid coast | west | rockslide |
 | 3 | fae glade | east | enchanted fog |
 | 4 | werewolf forest | northwest | fallen giant trees |
 | 5 | vampire estate | northeast, on a crag | black-rose thorn wall |
 
-All of it is gray-box.
+Cliff ridges (`Terrain/Ridges`) wall in the village and each land, higher than anything reachable nearby, so neither walking nor gliding passes a gate; the deep stream, a border ridge and the sea guard the map's edge. All gray-box.
