@@ -1,8 +1,8 @@
-Peter's rules and Julia's art direction, which bind every session, are in @DEV.md.
+Peter's rules, which bind every session, are in @DEV.md.
 
 ## The game
 
-Julia's vision: a heavily quest-based, high-fantasy magic game in the Infinity Nikki style, with more spookiness. The world is a limited open world: areas are explored freely, but quests unlock them gradually, in a rough order. The races are werewolves, vampires, mermaids, witches and fae. The player chooses a race and customizes looks such as hair and skin color. The game starts in Crossroads Village, at the center of the map. The mood changes with the area and situation, and later battles bring genuinely scary enemies.
+Julia's vision: a heavily quest-based, high-fantasy magic game in the Infinity Nikki style, with more spookiness. The world is a limited open world: areas are explored freely, but quests unlock them gradually, in a rough order. The player character has a thin hourglass figure, between Infinity Nikki's and Bayonetta's: taller and longer-legged than Nikki, slimmer than Bayonetta, with a soft doll-like face; an original design. The races are werewolves, vampires, mermaids, witches and fae. The player chooses a race and customizes looks such as hair and skin color. The game starts in Crossroads Village, at the center of the map. The mood changes with the area and situation, and later battles bring genuinely scary enemies. A familiar, a pet companion, follows the player; she chooses its form (fox-like, cat-like and so on) and its colors. Fashion is central: many outfits, worn in fine-grained slots from underclothes to multi-ring sets (backlog item 14). The body also takes features such as fairy, feathered or bat wings, halos, horns, ears, tails and head accessories. It is also a sub-game: each race holds a fashion show or social event, the game's version of farming-sim festivals, where the right outfit and good conversations win the player a title like "It Girl" (name to be decided).
 
 ## Tools
 
@@ -23,6 +23,7 @@ On the laptop; neither Godot nor Blender is on PATH.
 ## Where things are
 
 - `game/` is the Godot project, `art/` holds Blender sources, `tools/` holds scripts.
+- The map is in `game/world/`: each area is its own scene, streamed in around the camera. Quests are JSON data in `game/quests/data/`; what they give (open gates, things, later familiars and invitations) are generic grants. `game/save/` is the one save file, a section per system.
 - `.claude/skills/backlog-fan` runs several backlog items in parallel when Julia says "backlog fan".
 
 ## Repository

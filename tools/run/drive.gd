@@ -4,8 +4,11 @@ extends SceneTree
 
 const FPS := 60
 const TAP_SECONDS := 0.1
-const USAGE := "usage: -s ../tools/run/drive.gd -- scene=<res://scene.tscn> [out=<prefix>] do=\"<seconds>:<event>;...\""
+const USAGE := "usage: -s ../tools/run/drive.gd -- scene=<res://scene.tscn> [out=<prefix>] [save=<file>] do=\"<seconds>:<event>;...\""
 
+## The game plays from this save file and keeps it across runs; without one it is a new game that
+## is never saved, so runs do not depend on each other.
+var save_file := ""
 var _out := ""
 var _busy := 0
 var _failed := false
@@ -21,6 +24,7 @@ func _initialize() -> void:
 		_quit_with_usage()
 		return
 	_out = path(args.get("out", "build/drive/drive"))
+	save_file = path(args["save"]) if args.has("save") else ""
 	var timeline := []
 	for event in String(args.get("do", "")).split(";", false):
 		var parsed := _parse(event.split(":"))
@@ -42,6 +46,10 @@ func path(relative_or_absolute: String) -> String:
 ## Loads the scene and runs the timeline: a list of [frame, Callable]. Events due in the same
 ## frame run in list order.
 func play(scene: String, timeline: Array) -> void:
+	await process_frame
+	var save := root.get_node_or_null(^"Save")
+	if save:
+		save.use(save_file)
 	if change_scene_to_file(scene) != OK:
 		printerr("drive: cannot load the scene ", scene)
 		quit(1)

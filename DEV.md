@@ -22,15 +22,3 @@ Claude can use CLAUDE.md as memory.
 
 Claude is the owner of the architecture of the codebase. You can proactively solve tech debt yourself. If a big refactor is needed, you can add it to the backlog.
 </immutable without Peter’s (Julia’s husband developer) blessing>
-<immutable without Julia’s permission>
-The art style of this game is similar to Infinity Nikki — stylized anime-fantasy characters rendered with physically based lighting, in a bright storybook world.
-
-1. Characters: soft, doll-like anime faces and proportions, but lit with PBR so they sit naturally in a realistic-lit world. Skin should look soft and slightly translucent; hair should have clean, stylized highlights.
-2. Clothing: fabrics that read as real materials up close (satin sheen, velvet, lace, sheer layers, embroidery, sequins, metal trims).
-3. Cloth and hair motion: skirts, sleeves, ribbons, and hair that flow and trail during running, jumping, and gliding, stay stable, and don't clip through the body.
-4. World: a painterly, European-fairytale open world with saturated but harmonious color.
-5. Lighting and atmosphere: warm golden-hour light, soft bloom, volumetric fog and god rays, floating sparkle particles, and pretty water reflections.
-6. Animation feel: light, graceful, floaty character movement, expressive idle animations and small interactions, short sparkly "transformation" effects when switching outfits, and cinematic cutscenes with expressive faces.
-7. Photo-mode-level quality, to the extent possible with these engines and resources. The game should hold up in close-up screenshots.
-
-</immutable without Julia’s permission>

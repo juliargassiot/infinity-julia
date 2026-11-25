@@ -9,18 +9,7 @@ Sculpt, retopologize and rig an original anime-styled player body in Blender: do
 - None. Settled: the player is always a young woman, as in Infinity Nikki.
 
 ### Status
-Not started. Independent of items 4 and 5.
-
-## 5. Crossroads Village blockout
-
-### Task description
-Gray-box Crossroads Village at the center of the map: a crossroads with roads toward the lands of each race (werewolf forest, vampire estate, mermaid coast, witch marsh, fae glade), each closed by a natural gate (a broken bridge, a thorn wall, fog) that a quest will later open. Lay out the village (square, tailor's outfit shop, magic shop, inn, quest notice board, houses, landmarks) at walking scale, add golden-hour lighting, fog and sky, and plan area loading so the map can grow while holding 60 fps on the Deck. Screenshots from ground level.
-
-### Open questions
-- In what order do the lands after the witch marsh open? Julia chose the witch marsh first, nearest the village.
-
-### Status
-Not started.
+In progress on a branch.
 
 ## 6. Character creator
 
@@ -32,12 +21,12 @@ At the start of the game, the player picks a magical race (werewolf, vampire, me
 - Besides movement, does race change abilities?
 
 ### Status
-Not started. Needs item 3.
+Not started. Needs item 3. Save into the `Save` autoload (`game/save/`) with its own section.
 
 ## 7. Race designs
 
 ### Task description
-Design each race's look on the base character, in the Infinity Nikki style with a touch of spookiness: werewolf ears, tail and claws; vampire fangs, pale glow and red eyes; mermaid scales and a tail form in water; witch markings and familiar; fae wings and pointed ears. Start with design sheets rendered in Blender for Julia to choose from, then build the chosen designs.
+Design each race's look on the base character, in the Infinity Nikki style with a touch of spookiness: werewolf ears, tail and claws; vampire fangs, pale glow and red eyes; mermaid scales and a tail form in water; witch markings and a hat; fae wings and pointed ears. Start with design sheets rendered in Blender for Julia to choose from, then build the chosen designs.
 
 ### Open questions
 - Can werewolves fully transform, and do mermaids get legs on land?
@@ -48,13 +37,13 @@ Not started. Needs item 3. Probably splits into one item per race after the desi
 ## 8. Area moods
 
 ### Task description
-Make the mood follow the place and the situation: each area has a mood (light color, fog, sky, color grading, particles, music) that blends smoothly as the player crosses borders, and events such as nightfall or danger can push it darker. Bright storybook in Crossroads Village; eerie, moonlit and misty toward the vampire estate and the werewolf forest. Build the system with two or three example moods.
+Make the mood follow the place and the situation: each area has a mood (light color, fog, sky, color grading, particles, music) that blends smoothly as the player crosses borders, and events such as nightfall or danger can push it darker. Bright storybook in Crossroads Village; eerie, moonlit and misty toward the vampire estate and the werewolf forest. Include per-area ground tints (the terrain now colors by height only, so the marsh reads sandy). Build the system with two or three example moods.
 
 ### Open questions
-- Is there a day and night cycle, and do monsters come out at night?
+- None. Settled: there is a day and night cycle, nights are darker and spookier, and some monsters come out only after dark (they arrive with item 9).
 
 ### Status
-Not started. Works best after item 5.
+Not started. The village and the area streaming are in `game/world/`.
 
 ## 9. First battle and a scary enemy
 
@@ -68,25 +57,59 @@ A first combat prototype: the player fights with magic suited to their race, aga
 ### Status
 Not started. Needs items 3 and 8.
 
-## 10. Quests and area unlocking
+## 12. Seal the map borders
 
 ### Task description
-The game is heavily quest-based, and quests unlock the map gradually. Build the quest system: quests written as data files (steps, objectives, rewards, what they unlock), talking to villagers with dialogue choices, a quest journal, objective markers, and saving progress. Completing a quest can open an area gate from item 5. Prove it with a short first quest in Crossroads Village that opens the road to the first area.
+Gates close the roads to locked lands, but a player can still glide over the stream ravine elsewhere, climb the gentler hills around a gate, or walk off the map edge. Shape the terrain and scenery around each gate and along the map border (cliffs, thick woods, deep water) so locked lands stay out of reach and the edge never shows, without invisible walls where possible. Verify with drive.gd runs that try to get around each gate.
 
 ### Open questions
-- What is the main story, and who sends the player out from the village?
-- Are there side quests from the start?
+- None.
 
 ### Status
-Not started. Works best after item 5.
+In progress on a branch. The map is in `game/world/`; terrain shapes and paths bake into one heightmap.
 
-## 11. Gyro camera on the Deck
+## 13. Familiar companion
 
 ### Task description
-Let Julia aim the camera by tilting the Steam Deck, as an option next to the right stick. Try Godot's own motion sensor support (`Input.set_joy_motion_sensors_enabled`, `get_joy_gyroscope`) on the real Deck; if it does not work there, document Steam Input's "gyro as mouse", which feeds the existing mouse look. Gyro should only steer while a touch or grip is held, if that feels better.
+A familiar, a magical pet, follows the player around the world: it trots after her, waits, plays idle animations and reacts to her (happy when she returns, curious about objects). The player picks one of several forms, each with its own animal vibe (fox-like, cat-like and others) but all clearly magical, and customizes its colors. Build the follow behavior and the first two forms with models, rigs and animations, plus the choice and coloring screen. Cute but able to look a little eerie at night.
 
 ### Open questions
-- Does Julia want gyro aiming at all?
+- None. Settled: six forms (fox, cat, owl, bunny, dragonling, moth); this item builds fox and cat, the rest follow. It fights alongside her in battles (item 9), and she meets it in an early quest in Crossroads Village (item 10).
 
 ### Status
-Not started. Movement and camera are done in `game/player/`.
+Not started. Movement is in `game/player/`; quests grant the familiar with a `familiar` grant on `Quests.granted` (`game/quests/`).
+
+## 14. Wardrobe and outfits
+
+### Task description
+Fashion is central: many outfits over time, in slots for underclothes, bottoms, tops, dresses and one-pieces, socks, shoes, necklace, bracelets on each wrist, arm cuffs on each bicep, a multi-ring set on each hand, earrings, facial jewelry, head accessories and hairstyles, plus body features (fairy, feathered or bat wings, halos, horns) on their own sockets. Pieces skin to the character's skeleton, move with cloth physics and hide covered body parts. Build the slot system, a wardrobe screen, the sparkly outfit-change effect, and style tags (elegant, gothic, cute, wild, ethereal) that events judge. Make three starter outfits in different styles.
+
+### Open questions
+- How are new pieces earned: bought, crafted at the tailor, quest rewards, or all three?
+
+### Status
+Not started. Needs item 3. Quest rewards arrive as `item` grants on `Quests.granted` (`game/quests/`); the wardrobe should take them.
+
+## 15. First race social event
+
+### Task description
+Build the event system and the first event, a witch marsh gathering, as the game's version of a farming-sim festival. The player is invited through a quest, arrives at a decorated venue with a dress code, mingles with NPCs in conversations where good answers win favor, and is judged on how well her outfit fits the event's style tags. A strong showing earns standing toward a title like "It Girl". Each later race gets its own event built on the same system.
+
+### Open questions
+- The title's name is decided later; "It Girl" is a placeholder.
+- Do events happen on a calendar, like festivals, or when the story reaches them?
+- Can the player fail an event and try again?
+
+### Status
+Not started. Needs items 10 and 14.
+
+## 16. Title screen and storybook font
+
+### Task description
+A title screen for the Deck: New game, Continue (from the save in `game/save/`), and Settings (volume, readout, camera sensitivity). Bundle an open-licence storybook serif font in a `third_party` folder and use it across the game's screens, because SteamOS lacks the laptop's Palatino and Georgia fallbacks. The title screen should be pretty: a slow camera drift over Crossroads Village at golden hour, with the game's name.
+
+### Open questions
+- What is the game called?
+
+### Status
+Not started. The screens' theme is in `game/ui/`.
