@@ -1,5 +1,9 @@
 Peter's rules and Julia's art direction, which bind every session, are in @DEV.md.
 
+## The game
+
+Julia's vision: an open-world, high-fantasy magic game in the Infinity Nikki style, with more spookiness. The races are werewolves, vampires, mermaids, witches and fae. The player chooses a race and customizes looks such as hair and skin color. The game starts in Crossroads Village, at the center of the map. The mood changes with the area and situation, and later battles bring genuinely scary enemies.
+
 ## Tools
 
 On the laptop; neither Godot nor Blender is on PATH.
