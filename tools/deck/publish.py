@@ -62,7 +62,13 @@ def export():
     shutil.copyfile(ROOT / "tools/deck" / CLIENT, BUILD / CLIENT)
 
 
-def manifest(version):
+def head_stamp():
+    version, date = run("git", "show", "-s", "--abbrev=12", "--format=%h%n%cd",
+                        "--date=format:%Y-%m-%d %H:%M", "HEAD").stdout.splitlines()
+    return {"version": version, "date": date}
+
+
+def manifest(stamp):
     files = []
     for name, mode in ((BINARY, "755"), (PACK, "644"), (CLIENT, "755")):
         data = (BUILD / name).read_bytes()
@@ -73,7 +79,7 @@ def manifest(version):
         shutil.copyfile(BUILD / name, UPLOAD / asset)
         files.append({"name": name, "asset": asset, "sha256": digest,
                       "size": len(data), "mode": mode})
-    return {"version": version, "files": files}
+    return {**stamp, "files": files}
 
 
 def upload(build):
@@ -98,17 +104,17 @@ def main():
     force = "--force" in sys.argv
     if run("git", "status", "--porcelain", "--", *SOURCES).stdout.strip():
         sys.exit("Commit the changes under game/ and tools/deck/ before publishing.")
-    version = run("git", "rev-parse", "--short=12", "HEAD").stdout.strip()
+    stamp = head_stamp()
     if not force and unchanged_since(published_version()):
         print("Steam Deck build: already up to date.")
         return
-    print(f"Steam Deck build: exporting {version}...", flush=True)
+    print(f"Steam Deck build: exporting {stamp['version']}...", flush=True)
     export()
     print("Steam Deck build: uploading...", flush=True)
-    upload(manifest(version))
+    upload(manifest(stamp))
     if (ROOT / SMOKE_TEST).is_file():
         run("gh", "workflow", "run", Path(SMOKE_TEST).name, check=False)
-    print(f"Steam Deck build: {version} is published.")
+    print(f"Steam Deck build: {stamp['version']} is published.")
 
 
 if __name__ == "__main__":
