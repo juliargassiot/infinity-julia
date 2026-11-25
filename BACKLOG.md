@@ -40,7 +40,7 @@ Not started. Needs item 3. Probably splits into one item per race after the desi
 Make the mood follow the place and the situation: each area has a mood (light color, fog, sky, color grading, particles, music) that blends smoothly as the player crosses borders, and events such as nightfall or danger can push it darker. Bright storybook in Crossroads Village; eerie, moonlit and misty toward the vampire estate and the werewolf forest. Include per-area ground tints (the terrain now colors by height only, so the marsh reads sandy). Build the system with two or three example moods.
 
 ### Open questions
-- Is there a day and night cycle, and do monsters come out at night?
+- None. Settled: there is a day and night cycle, nights are darker and spookier, and some monsters come out only after dark (they arrive with item 9).
 
 ### Status
 Not started. The village and the area streaming are in `game/world/`.
@@ -63,11 +63,10 @@ Not started. Needs items 3 and 8.
 The game is heavily quest-based, and quests unlock the map gradually. Build the quest system: quests written as data files (steps, objectives, rewards, what they unlock), talking to villagers with dialogue choices, a quest journal, objective markers, and saving progress. Completing a quest can open an area gate from item 5. Prove it with a short first quest in Crossroads Village that opens the road to the first area.
 
 ### Open questions
-- What is the main story, and who sends the player out from the village?
-- Are there side quests from the start?
+- None. Settled: the main story is decided later, so the first main quest is a placeholder. Side quests are on the notice board from the start; include one example.
 
 ### Status
-Not started. The village and area gates are in `game/world/`; quests open gates with `World.open_gate(id)`, and gate state still needs saving.
+In progress on a branch. The village and area gates are in `game/world/`; quests open gates with `World.open_gate(id)`, and gate state still needs saving.
 
 ## 12. Seal the map borders
 
@@ -78,4 +77,4 @@ Gates close the roads to locked lands, but a player can still glide over the str
 - None.
 
 ### Status
-Not started. The map is in `game/world/`; terrain shapes and paths bake into one heightmap.
+In progress on a branch. The map is in `game/world/`; terrain shapes and paths bake into one heightmap.
