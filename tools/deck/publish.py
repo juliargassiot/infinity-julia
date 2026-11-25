@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-import glob
 import hashlib
 import json
-import os
 import shutil
 import subprocess
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "run"))
+from quiet import find_godot  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 BUILD = ROOT / "build/deck"
@@ -19,8 +20,6 @@ CLIENT = "deck.py"
 SOURCES = ["game", f"tools/deck/{CLIENT}"]
 SMOKE_TEST = ".github/workflows/deck.yml"
 MAX_ASSET_BYTES = 2 * 1024 ** 3
-GODOT_GLOB = (r"%LOCALAPPDATA%\Microsoft\WinGet\Packages\GodotEngine.GodotEngine_*"
-              r"\Godot_v*_win64_console.exe")
 
 
 def run(*command, check=True):
@@ -28,14 +27,6 @@ def run(*command, check=True):
     if check and result.returncode:
         sys.exit(f"{' '.join(map(str, command))}\n{result.stdout}{result.stderr}")
     return result
-
-
-def godot():
-    found = os.environ.get("GODOT") or next(
-        iter(sorted(glob.glob(os.path.expandvars(GODOT_GLOB)))), None)
-    if not found:
-        sys.exit("Godot was not found; set GODOT to its console executable.")
-    return found
 
 
 def published_version():
@@ -55,7 +46,7 @@ def unchanged_since(version):
 def export():
     shutil.rmtree(BUILD, ignore_errors=True)
     UPLOAD.mkdir(parents=True)
-    result = run(godot(), "--headless", "--path", "game", "--export-release", PRESET,
+    result = run(find_godot(), "--headless", "--path", "game", "--export-release", PRESET,
                  BUILD / BINARY, check=False)
     if result.returncode or not all((BUILD / name).is_file() for name in (BINARY, PACK)):
         sys.exit(f"The Steam Deck export failed.\n{result.stdout}{result.stderr}")
