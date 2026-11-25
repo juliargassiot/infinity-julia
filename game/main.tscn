@@ -8,6 +8,7 @@
 [ext_resource type="Material" path="res://world/blockout/water.tres" id="6_ycdy4"]
 [ext_resource type="Script" path="res://world/world_area.gd" id="7_w48qg"]
 [ext_resource type="PackedScene" path="res://player/player.tscn" id="8_vivmo"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="9_hud"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2cqfq"]
 sky_top_color = Color(0.22, 0.42, 0.82, 1)
@@ -126,8 +127,9 @@ point_count = 12
 material = ExtResource("6_ycdy4")
 size = Vector2(3000, 3000)
 
-[node name="Main" type="Node3D" unique_id=221075990]
+[node name="Main" type="Node3D" unique_id=221075990 node_paths=PackedStringArray("player")]
 script = ExtResource("1_5vw27")
+player = NodePath("Player")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1992285581]
 environment = SubResource("Environment_074og")
@@ -332,3 +334,5 @@ radius = 80.0
 
 [node name="Player" parent="." unique_id=580084734 instance=ExtResource("8_vivmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.005528, 24)
+
+[node name="Hud" parent="." instance=ExtResource("9_hud")]

@@ -1,0 +1,83 @@
+{
+	"title": "The Broken Bridge",
+	"main": true,
+	"auto_start": true,
+	"summary": "The bridge on the south road fell into the ravine in the spring floods, and nobody has crossed to the witch marsh since. Mayor Hazel is looking for someone to help.",
+	"steps": [
+		{"id": "meet_mayor", "task": "Talk to Mayor Hazel by the fountain.", "talk": "mayor"},
+		{"id": "see_bridge", "task": "Look at the broken bridge on the south road.", "visit": "broken_bridge"},
+		{"id": "ask_carpenter", "task": "Ask Bram the carpenter to mend the bridge.", "talk": "carpenter"}
+	],
+	"grants": [
+		{"item": "silver_lantern_charm", "name": "Hazel's silver lantern charm"},
+		{"gate": "witch_marsh", "name": "The road to the Witch Marsh"}
+	],
+	"talks": [
+		{
+			"with": "mayor",
+			"when": "meet_mayor",
+			"lines": [
+				"Oh! A new face in Crossroads Village. Welcome, welcome!",
+				"I'm Hazel, mayor of this little crossroads. I'm afraid you've come at an awkward time.",
+				"The bridge on the south road fell into the ravine in the spring floods. Nobody has reached the witch marsh since."
+			],
+			"choices": [
+				{
+					"text": "What's in the witch marsh?",
+					"back": true,
+					"lines": [
+						"Herbs, potions, old magic... and the witches, of course. They came to our market every week.",
+						"Lately we've seen lights over the marsh at night. Strange, green lights."
+					]
+				},
+				{
+					"text": "I could help.",
+					"then": "advance",
+					"lines": [
+						"Would you? Bless you!",
+						"Go and look at the bridge first, just down the south road. Then we'll see what can be done."
+					]
+				},
+				{
+					"text": "Not right now.",
+					"lines": ["Of course. I'll be here by the fountain if you change your mind."]
+				}
+			]
+		},
+		{
+			"with": "mayor",
+			"when": "see_bridge",
+			"lines": ["The bridge is just down the south road, past the last houses. Mind the ravine!"]
+		},
+		{
+			"with": "mayor",
+			"when": "ask_carpenter",
+			"lines": ["As bad as that? Then it's a job for Bram the carpenter. He's working by the south road."]
+		},
+		{
+			"with": "mayor",
+			"when": "done",
+			"lines": ["The road south is open again, thanks to you. Give the witches my regards!"]
+		},
+		{
+			"with": "carpenter",
+			"when": "ask_carpenter",
+			"lines": ["The old bridge? Aye, I've timber enough for it. Only nobody asked me."],
+			"choices": [
+				{
+					"text": "Why did nobody ask?",
+					"back": true,
+					"lines": ["Folk are uneasy about the marsh lately. Those lights... But a bridge is a bridge."]
+				},
+				{
+					"text": "Could you mend it, please?",
+					"then": "advance",
+					"lines": [
+						"For you? Right away.",
+						"There we are: new planks, new ropes, sound as an oak. Off to the marsh with you!"
+					]
+				}
+			]
+		}
+	]
+}

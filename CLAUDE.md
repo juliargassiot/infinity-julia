@@ -23,7 +23,7 @@ On the laptop; neither Godot nor Blender is on PATH.
 ## Where things are
 
 - `game/` is the Godot project, `art/` holds Blender sources, `tools/` holds scripts.
-- The map is in `game/world/`: each area is its own scene, streamed in around the camera; quests open area gates with `World.open_gate(id)`.
+- The map is in `game/world/`: each area is its own scene, streamed in around the camera. Quests are JSON data in `game/quests/data/`; what they give (open gates, things, later familiars and invitations) are generic grants. `game/save/` is the one save file, a section per system.
 - `.claude/skills/backlog-fan` runs several backlog items in parallel when Julia says "backlog fan".
 
 ## Repository
