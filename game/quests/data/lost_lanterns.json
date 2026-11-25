@@ -1,0 +1,51 @@
+{
+	"title": "Pip's Lost Lanterns",
+	"summary": "A storm blew Pip's three moon lanterns all over the village. Pip, who works at the inn, would be grateful to have them back.",
+	"steps": [
+		{"id": "find_lanterns", "task": "Find Pip's moon lanterns around the village.", "collect": "moon_lantern", "count": 3},
+		{"id": "return_lanterns", "task": "Bring the lanterns back to Pip at the inn.", "talk": "pip"}
+	],
+	"grants": [{"item": "moth_wing_ribbon", "name": "Moth-wing hair ribbon"}],
+	"talks": [
+		{
+			"with": "notice_board",
+			"when": "offer",
+			"topic": "Lost: three moon lanterns",
+			"lines": ["LOST: three little moon lanterns, blown away in Tuesday's storm. They glow pale blue and hum softly. A reward for their return! - Pip, at the inn"],
+			"choices": [
+				{"text": "Take the notice.", "then": "start", "lines": ["You fold the notice into your pocket."]},
+				{"text": "Leave it for now."}
+			]
+		},
+		{
+			"with": "pip",
+			"when": "offer",
+			"lines": ["The storm took all three of my moon lanterns! I've pinned a notice on the board in the square, in case anyone can help."]
+		},
+		{
+			"with": "pip",
+			"when": "find_lanterns",
+			"lines": ["Any luck? They're small and glow pale blue. The wind could have carried them anywhere in the village."]
+		},
+		{
+			"with": "pip",
+			"when": "return_lanterns",
+			"lines": ["Is that... You found them! All three!"],
+			"choices": [
+				{
+					"text": "Here you are.",
+					"then": "advance",
+					"lines": [
+						"Listen, they're humming again. Oh, thank you!",
+						"Please, take this ribbon. It's spun from moth wings, and it glows a little at night."
+					]
+				}
+			]
+		},
+		{
+			"with": "pip",
+			"when": "done",
+			"lines": ["My lanterns shine in the inn's window every night now, thanks to you."]
+		}
+	]
+}

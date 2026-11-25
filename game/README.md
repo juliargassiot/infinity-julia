@@ -8,4 +8,6 @@ Everything here is original except folders named `third_party`, which hold downl
 
 `player/` holds the player, her camera and a test ground.
 
+`quests/` holds the quests, written as data, and the villagers and things they are about; `ui/` the screen over the world (quest tracker, conversations, journal); `save/` the save file.
+
 `readout.gd` is an autoload that shows the build and the frame rate in the top-right corner; the `toggle_readout` action (`F3`) hides it. The build comes from `../tools/deck`.

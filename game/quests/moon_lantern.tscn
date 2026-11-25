@@ -1,0 +1,75 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://quests/quest_item.gd" id="1_item"]
+[ext_resource type="Material" path="res://world/blockout/metal.tres" id="2_metal"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cap"]
+top_radius = 0.04
+bottom_radius = 0.14
+height = 0.1
+radial_segments = 6
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moon"]
+albedo_color = Color(0.86, 0.9, 1, 1)
+emission_enabled = true
+emission = Color(0.62, 0.74, 1, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_moon"]
+material = SubResource("StandardMaterial3D_moon")
+radius = 0.12
+height = 0.24
+radial_segments = 16
+rings = 8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_frame"]
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.3
+radial_segments = 4
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_handle"]
+inner_radius = 0.05
+outer_radius = 0.07
+rings = 12
+ring_segments = 4
+
+[node name="MoonLantern" type="Node3D"]
+script = ExtResource("1_item")
+id = &"moon_lantern"
+marker_height = 1.1
+display_name = "moon lantern"
+verb = "Pick up"
+reach = 1.8
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0.05, 0)
+material_override = ExtResource("2_metal")
+mesh = SubResource("CylinderMesh_cap")
+
+[node name="Moon" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_moon")
+
+[node name="Frame" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.22, 0)
+material_override = ExtResource("2_metal")
+mesh = SubResource("CylinderMesh_frame")
+
+[node name="Frame2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.22, 0)
+material_override = ExtResource("2_metal")
+mesh = SubResource("CylinderMesh_frame")
+
+[node name="Cap" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+material_override = ExtResource("2_metal")
+mesh = SubResource("CylinderMesh_cap")
+
+[node name="Handle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.5, 0)
+material_override = ExtResource("2_metal")
+mesh = SubResource("TorusMesh_handle")
