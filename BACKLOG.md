@@ -93,7 +93,7 @@ Not started. Movement is done in `game/player/`.
 ## 14. Wardrobe and outfits
 
 ### Task description
-The heart of the fashion sub-game: outfits made of swappable pieces (hair accessory, top, bottom or dress, shoes, accessories) that fit the player character and move with cloth physics, a wardrobe screen to dress her, and the sparkly transformation effect when switching outfits. Each piece carries style tags (elegant, gothic, cute, wild, ethereal and so on) that events can judge. Make three complete starter outfits in clearly different styles. The tailor's shop in the village will later sell and craft pieces.
+The heart of the large fashion element: many outfits over time, worn in slots for underclothes, bottoms, tops, dresses and one-pieces, socks, shoes, necklace, bracelets on each wrist, arm cuffs on each bicep, rings on every finger, earrings, facial jewelry and hairstyles. Pieces skin to the character's skeleton, move with cloth physics and hide covered body parts. Build the slot system, a wardrobe screen, the sparkly outfit-change effect, and style tags (elegant, gothic, cute, wild, ethereal) that events judge. Make three complete starter outfits in different styles.
 
 ### Open questions
 - How are new pieces earned: bought, crafted at the tailor, quest rewards, or all three?
