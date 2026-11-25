@@ -101,7 +101,7 @@ Build the event system and the first event, a witch marsh gathering, as the game
 - Can the player fail an event and try again?
 
 ### Status
-Not started. Needs items 10 and 14.
+Not started. Needs item 14. Quests can invite with an `invite` grant (`game/quests/`).
 
 ## 16. Title screen and storybook font
 
