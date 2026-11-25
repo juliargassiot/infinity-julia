@@ -1,0 +1,14 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://characters/player/player_character.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://characters/player/player.glb" id="2_model"]
+[ext_resource type="Script" path="res://characters/player/locomotion.gd" id="3_locomotion"]
+
+[node name="PlayerCharacter" type="Node3D"]
+script = ExtResource("1_script")
+
+[node name="Model" parent="." instance=ExtResource("2_model")]
+
+[node name="Locomotion" type="AnimationTree" parent="."]
+anim_player = NodePath("../Model/AnimationPlayer")
+script = ExtResource("3_locomotion")
