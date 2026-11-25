@@ -2,7 +2,7 @@ Peter's rules and Julia's art direction, which bind every session, are in @DEV.m
 
 ## The game
 
-Julia's vision: an open-world, high-fantasy magic game in the Infinity Nikki style, with more spookiness. The races are werewolves, vampires, mermaids, witches and fae. The player chooses a race and customizes looks such as hair and skin color. The game starts in Crossroads Village, at the center of the map. The mood changes with the area and situation, and later battles bring genuinely scary enemies.
+Julia's vision: a heavily quest-based, high-fantasy magic game in the Infinity Nikki style, with more spookiness. The world is a limited open world: areas are explored freely, but quests unlock them gradually, in a rough order. The races are werewolves, vampires, mermaids, witches and fae. The player chooses a race and customizes looks such as hair and skin color. The game starts in Crossroads Village, at the center of the map. The mood changes with the area and situation, and later battles bring genuinely scary enemies.
 
 ## Tools
 

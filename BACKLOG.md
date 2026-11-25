@@ -48,11 +48,11 @@ Not started. Swaps the capsule for the item 3 character once both are done.
 ## 5. Crossroads Village blockout
 
 ### Task description
-Gray-box Crossroads Village at the center of the open-world map: a crossroads with roads leading out toward the lands of each race (werewolf forest, vampire estate, mermaid coast, witch marsh, fae glade). Lay out the village itself (square, shops, houses, landmarks) at walking scale, add golden-hour lighting, fog and sky, and plan world streaming so the map can grow while holding 60 fps on the Deck. Screenshots from ground level.
+Gray-box Crossroads Village at the center of the map: a crossroads with roads toward the lands of each race (werewolf forest, vampire estate, mermaid coast, witch marsh, fae glade), each closed by a natural gate (a broken bridge, a thorn wall, fog) that a quest will later open. Lay out the village (square, shops, houses, landmarks) at walking scale, add golden-hour lighting, fog and sky, and plan area loading so the map can grow while holding 60 fps on the Deck. Screenshots from ground level.
 
 ### Open questions
 - What must the village have: a tailor, a magic shop, an inn, a notice board?
-- Which race's lands lie in which direction?
+- Which race's lands lie in which direction, and in what order do they open?
 
 ### Status
 Not started.
@@ -102,3 +102,15 @@ A first combat prototype: the player fights with magic suited to their race, aga
 
 ### Status
 Not started. Needs items 3, 4 and 8.
+
+## 10. Quests and area unlocking
+
+### Task description
+The game is heavily quest-based, and quests unlock the map gradually. Build the quest system: quests written as data files (steps, objectives, rewards, what they unlock), talking to villagers with dialogue choices, a quest journal, objective markers, and saving progress. Completing a quest can open an area gate from item 5. Prove it with a short first quest in Crossroads Village that opens the road to the first area.
+
+### Open questions
+- What is the main story, and who sends the player out from the village?
+- Are there side quests from the start?
+
+### Status
+Not started. Works best after items 4 and 5.
