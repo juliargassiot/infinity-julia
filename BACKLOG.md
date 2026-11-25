@@ -11,17 +11,6 @@ Sculpt, retopologize and rig an original anime-styled player body in Blender: do
 ### Status
 Not started. Independent of items 4 and 5.
 
-## 4. Movement and camera
-
-### Task description
-A third-person controller with a placeholder capsule: walk, run and jump, plus an orbiting camera that avoids walls. Steam Deck controls first (sticks, buttons, gyro optional), keyboard and mouse second. Movement should feel light and graceful. Test on a simple ground with slopes, steps and ledges, and record frame times with `tools/run/drive.gd`. Air movement depends on race: build it as swappable abilities, with a floaty glide as the first.
-
-### Open questions
-- None. Settled: air movement depends on race (fae fly, mermaids swim fast, others to be designed in item 7).
-
-### Status
-Not started. Swaps the capsule for the item 3 character once both are done.
-
 ## 5. Crossroads Village blockout
 
 ### Task description
@@ -77,7 +66,7 @@ A first combat prototype: the player fights with magic suited to their race, aga
 - How scary is too scary: unsettling, or real horror?
 
 ### Status
-Not started. Needs items 3, 4 and 8.
+Not started. Needs items 3 and 8.
 
 ## 10. Quests and area unlocking
 
@@ -89,4 +78,15 @@ The game is heavily quest-based, and quests unlock the map gradually. Build the 
 - Are there side quests from the start?
 
 ### Status
-Not started. Works best after items 4 and 5.
+Not started. Works best after item 5.
+
+## 11. Gyro camera on the Deck
+
+### Task description
+Let Julia aim the camera by tilting the Steam Deck, as an option next to the right stick. Try Godot's own motion sensor support (`Input.set_joy_motion_sensors_enabled`, `get_joy_gyroscope`) on the real Deck; if it does not work there, document Steam Input's "gyro as mouse", which feeds the existing mouse look. Gyro should only steer while a touch or grip is held, if that feels better.
+
+### Open questions
+- Does Julia want gyro aiming at all?
+
+### Status
+Not started. Movement and camera are done in `game/player/`.
