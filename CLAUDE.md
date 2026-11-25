@@ -12,7 +12,8 @@ On the laptop; neither Godot nor Blender is on PATH.
 
 ## Build and run
 
-- Check visual work by rendering it with `tools/screenshot.gd` and looking at the PNG.
+- Check visual work by rendering it and looking at the PNG: `py -3 tools/run/quiet.py --path game --fixed-fps 60 -s ../tools/run/screenshot.gd -- res://main.tscn build/shots/main.png`.
+- Never open Godot windows on Julia's screen for tests: run Godot through `tools/run/quiet.py` (hidden desktop). Scripted play and frame times: `tools/run/drive.gd`; see `tools/run/README.md`.
 - Every push to `main` publishes a Steam Deck build that Julia's Deck fetches by itself (`tools/deck`). The push fails if the export fails; a GitHub workflow then test-installs the build on Linux. Check that run after pushing game changes: `gh run list --workflow deck.yml`.
 
 ## Where things are
