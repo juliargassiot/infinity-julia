@@ -79,14 +79,3 @@ The game is heavily quest-based, and quests unlock the map gradually. Build the 
 
 ### Status
 Not started. Works best after item 5.
-
-## 11. Gyro camera on the Deck
-
-### Task description
-Let Julia aim the camera by tilting the Steam Deck, as an option next to the right stick. Try Godot's own motion sensor support (`Input.set_joy_motion_sensors_enabled`, `get_joy_gyroscope`) on the real Deck; if it does not work there, document Steam Input's "gyro as mouse", which feeds the existing mouse look. Gyro should only steer while a touch or grip is held, if that feels better.
-
-### Open questions
-- Does Julia want gyro aiming at all?
-
-### Status
-Not started. Movement and camera are done in `game/player/`.
