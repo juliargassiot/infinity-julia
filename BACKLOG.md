@@ -9,18 +9,7 @@ Sculpt, retopologize and rig an original anime-styled player body in Blender: do
 - None. Settled: the player is always a young woman, as in Infinity Nikki.
 
 ### Status
-Not started. Independent of items 4 and 5.
-
-## 5. Crossroads Village blockout
-
-### Task description
-Gray-box Crossroads Village at the center of the map: a crossroads with roads toward the lands of each race (werewolf forest, vampire estate, mermaid coast, witch marsh, fae glade), each closed by a natural gate (a broken bridge, a thorn wall, fog) that a quest will later open. Lay out the village (square, tailor's outfit shop, magic shop, inn, quest notice board, houses, landmarks) at walking scale, add golden-hour lighting, fog and sky, and plan area loading so the map can grow while holding 60 fps on the Deck. Screenshots from ground level.
-
-### Open questions
-- In what order do the lands after the witch marsh open? Julia chose the witch marsh first, nearest the village.
-
-### Status
-Not started.
+In progress on a branch.
 
 ## 6. Character creator
 
@@ -48,13 +37,13 @@ Not started. Needs item 3. Probably splits into one item per race after the desi
 ## 8. Area moods
 
 ### Task description
-Make the mood follow the place and the situation: each area has a mood (light color, fog, sky, color grading, particles, music) that blends smoothly as the player crosses borders, and events such as nightfall or danger can push it darker. Bright storybook in Crossroads Village; eerie, moonlit and misty toward the vampire estate and the werewolf forest. Build the system with two or three example moods.
+Make the mood follow the place and the situation: each area has a mood (light color, fog, sky, color grading, particles, music) that blends smoothly as the player crosses borders, and events such as nightfall or danger can push it darker. Bright storybook in Crossroads Village; eerie, moonlit and misty toward the vampire estate and the werewolf forest. Include per-area ground tints (the terrain now colors by height only, so the marsh reads sandy). Build the system with two or three example moods.
 
 ### Open questions
 - Is there a day and night cycle, and do monsters come out at night?
 
 ### Status
-Not started. Works best after item 5.
+Not started. The village and the area streaming are in `game/world/`.
 
 ## 9. First battle and a scary enemy
 
@@ -78,4 +67,15 @@ The game is heavily quest-based, and quests unlock the map gradually. Build the 
 - Are there side quests from the start?
 
 ### Status
-Not started. Works best after item 5.
+Not started. The village and area gates are in `game/world/`; quests open gates with `World.open_gate(id)`, and gate state still needs saving.
+
+## 12. Seal the map borders
+
+### Task description
+Gates close the roads to locked lands, but a player can still glide over the stream ravine elsewhere, climb the gentler hills around a gate, or walk off the map edge. Shape the terrain and scenery around each gate and along the map border (cliffs, thick woods, deep water) so locked lands stay out of reach and the edge never shows, without invisible walls where possible. Verify with drive.gd runs that try to get around each gate.
+
+### Open questions
+- None.
+
+### Status
+Not started. The map is in `game/world/`; terrain shapes and paths bake into one heightmap.

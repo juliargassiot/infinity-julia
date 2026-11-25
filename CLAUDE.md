@@ -1,4 +1,4 @@
-Peter's rules and Julia's art direction, which bind every session, are in @DEV.md.
+Peter's rules, which bind every session, are in @DEV.md.
 
 ## The game
 
