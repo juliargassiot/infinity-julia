@@ -1,0 +1,800 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://world/blockout/wall_gothic.tres" id="1_0hxfa"]
+[ext_resource type="Material" path="res://world/blockout/roof_slate.tres" id="2_ahn54"]
+[ext_resource type="Material" path="res://world/blockout/window_red.tres" id="3_th5a6"]
+[ext_resource type="Material" path="res://world/blockout/wood_dark.tres" id="4_nnihp"]
+[ext_resource type="Material" path="res://world/blockout/stone_dark.tres" id="5_pjxq2"]
+[ext_resource type="Material" path="res://world/blockout/metal.tres" id="6_s8acy"]
+[ext_resource type="Material" path="res://world/blockout/dead_wood.tres" id="7_5d2f1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_book6"]
+material = ExtResource("1_0hxfa")
+size = Vector3(26, 13, 14)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t17ic"]
+size = Vector3(26, 13, 14)
+
+[sub_resource type="PrismMesh" id="PrismMesh_htb58"]
+material = ExtResource("2_ahn54")
+size = Vector3(27, 7, 15)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gcu7g"]
+material = ExtResource("1_0hxfa")
+top_radius = 3.5
+bottom_radius = 3.8
+height = 22.0
+radial_segments = 16
+rings = 1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gmtc5"]
+height = 22.0
+radius = 3.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i1od8"]
+material = ExtResource("2_ahn54")
+top_radius = 0.0
+bottom_radius = 4.2
+height = 9.0
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_iaj74"]
+material = ExtResource("1_0hxfa")
+top_radius = 3.5
+bottom_radius = 3.8
+height = 22.0
+radial_segments = 16
+rings = 1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l11bn"]
+height = 22.0
+radius = 3.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2n0iy"]
+material = ExtResource("2_ahn54")
+top_radius = 0.0
+bottom_radius = 4.2
+height = 9.0
+radial_segments = 8
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_koruh"]
+material = ExtResource("3_th5a6")
+size = Vector3(1.4, 2.6, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kamo6"]
+material = ExtResource("3_th5a6")
+size = Vector3(1.4, 2.6, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2d3id"]
+material = ExtResource("3_th5a6")
+size = Vector3(1.4, 2.6, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1l2sp"]
+material = ExtResource("3_th5a6")
+size = Vector3(1.4, 2.6, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kubsp"]
+material = ExtResource("3_th5a6")
+size = Vector3(1.4, 2.6, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_168rh"]
+material = ExtResource("3_th5a6")
+size = Vector3(1.4, 2.6, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ajvha"]
+material = ExtResource("3_th5a6")
+size = Vector3(1.4, 2.6, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t7hpr"]
+material = ExtResource("3_th5a6")
+size = Vector3(1.4, 2.6, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hep37"]
+material = ExtResource("4_nnihp")
+size = Vector3(3, 4.5, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_alr4p"]
+material = ExtResource("5_pjxq2")
+size = Vector3(7, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2udqb"]
+size = Vector3(7, 1, 4)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_al3su"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2y15h"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4nnl2"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_j66p6"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jca2o"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0vwxq"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vy3xq"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pvmpv"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_aen4n"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kvnyg"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wepmt"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qtuga"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xx7kq"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yxy5o"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_f4dd0"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_onrli"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_axfin"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3cn30"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ot5lv"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4l85n"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3ksmm"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6fo8w"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qdcpn"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0xesx"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5wjvd"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e4ody"]
+material = ExtResource("6_s8acy")
+top_radius = 0.07
+bottom_radius = 0.07
+height = 2.6
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_aj8oa"]
+height = 5.37288
+radius = 0.470127
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yrpxp"]
+height = 4.8768497
+radius = 0.42672434
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lub04"]
+height = 4.3276806
+radius = 0.37867206
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fekl0"]
+height = 5.086725
+radius = 0.44508845
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lvdtw"]
+height = 4.4521255
+radius = 0.389561
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h7s7y"]
+height = 4.8133793
+radius = 0.42117068
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8ivce"]
+height = 4.766531
+radius = 0.41707146
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_px4eg"]
+height = 4.686346
+radius = 0.41005528
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_el6xw"]
+height = 3.2521687
+radius = 0.28456476
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_a6poa"]
+height = 3.7748585
+radius = 0.33030012
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_64wap"]
+height = 3.5175605
+radius = 0.30778655
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xxfp5"]
+height = 3.222774
+radius = 0.28199273
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qjqq4"]
+height = 5.36841
+radius = 0.4697359
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tto6x"]
+height = 4.9856315
+radius = 0.43624276
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3qlmk"]
+height = 4.9058285
+radius = 0.42926
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yaif4"]
+height = 3.461071
+radius = 0.30284372
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vwmy6"]
+material = ExtResource("7_5d2f1")
+top_radius = 0.22
+bottom_radius = 0.38
+height = 4.0
+radial_segments = 8
+
+[sub_resource type="MultiMesh" id="MultiMesh_p6k6j"]
+transform_format = 1
+instance_count = 16
+mesh = SubResource("CylinderMesh_vwmy6")
+
+[node name="VampireEstate" type="Node3D" unique_id=21536320]
+
+[node name="Manor" type="Node3D" parent="." unique_id=1094355393]
+transform = Transform3D(0.9383431, 0, -0.34570536, 0, 1, 0, 0.34570536, 0, 0.9383431, 7, 28.781282, -21)
+
+[node name="Hall" type="MeshInstance3D" parent="Manor" unique_id=7347090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+mesh = SubResource("BoxMesh_book6")
+
+[node name="Body" type="StaticBody3D" parent="Manor/Hall" unique_id=1452323682]
+
+[node name="Shape" type="CollisionShape3D" parent="Manor/Hall/Body" unique_id=256776203]
+shape = SubResource("BoxShape3D_t17ic")
+
+[node name="Roof" type="MeshInstance3D" parent="Manor" unique_id=903908356]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 16, 0)
+mesh = SubResource("PrismMesh_htb58")
+
+[node name="Tower" type="MeshInstance3D" parent="Manor" unique_id=2093049514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 10.5, 0)
+mesh = SubResource("CylinderMesh_gcu7g")
+
+[node name="Body" type="StaticBody3D" parent="Manor/Tower" unique_id=609707098]
+
+[node name="Shape" type="CollisionShape3D" parent="Manor/Tower/Body" unique_id=2041379384]
+shape = SubResource("CylinderShape3D_gmtc5")
+
+[node name="Spire" type="MeshInstance3D" parent="Manor" unique_id=333251876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 26, 0)
+mesh = SubResource("CylinderMesh_i1od8")
+
+[node name="Tower2" type="MeshInstance3D" parent="Manor" unique_id=1730776465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 10.5, 0)
+mesh = SubResource("CylinderMesh_iaj74")
+
+[node name="Body" type="StaticBody3D" parent="Manor/Tower2" unique_id=820651479]
+
+[node name="Shape" type="CollisionShape3D" parent="Manor/Tower2/Body" unique_id=798993426]
+shape = SubResource("CylinderShape3D_l11bn")
+
+[node name="Spire2" type="MeshInstance3D" parent="Manor" unique_id=620797162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 26, 0)
+mesh = SubResource("CylinderMesh_2n0iy")
+
+[node name="Window" type="MeshInstance3D" parent="Manor" unique_id=1704834894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3.5, 7.05)
+cast_shadow = 0
+visibility_range_end = 200.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_koruh")
+
+[node name="Window2" type="MeshInstance3D" parent="Manor" unique_id=430011190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 9, 7.05)
+cast_shadow = 0
+visibility_range_end = 200.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_kamo6")
+
+[node name="Window3" type="MeshInstance3D" parent="Manor" unique_id=978734227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3.5, 7.05)
+cast_shadow = 0
+visibility_range_end = 200.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_2d3id")
+
+[node name="Window4" type="MeshInstance3D" parent="Manor" unique_id=352405628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 9, 7.05)
+cast_shadow = 0
+visibility_range_end = 200.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_1l2sp")
+
+[node name="Window5" type="MeshInstance3D" parent="Manor" unique_id=210912399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3.5, 7.05)
+cast_shadow = 0
+visibility_range_end = 200.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_kubsp")
+
+[node name="Window6" type="MeshInstance3D" parent="Manor" unique_id=129902037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 9, 7.05)
+cast_shadow = 0
+visibility_range_end = 200.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_168rh")
+
+[node name="Window7" type="MeshInstance3D" parent="Manor" unique_id=1141651025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3.5, 7.05)
+cast_shadow = 0
+visibility_range_end = 200.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_ajvha")
+
+[node name="Window8" type="MeshInstance3D" parent="Manor" unique_id=2015982878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 9, 7.05)
+cast_shadow = 0
+visibility_range_end = 200.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_t7hpr")
+
+[node name="Door" type="MeshInstance3D" parent="Manor" unique_id=270636283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 7.1)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_hep37")
+
+[node name="Steps" type="MeshInstance3D" parent="Manor" unique_id=1940750434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 8.8)
+mesh = SubResource("BoxMesh_alr4p")
+
+[node name="Body" type="StaticBody3D" parent="Manor/Steps" unique_id=815110812]
+
+[node name="Shape" type="CollisionShape3D" parent="Manor/Steps/Body" unique_id=805280352]
+shape = SubResource("BoxShape3D_2udqb")
+
+[node name="Fence" type="Node3D" parent="." unique_id=1880709776]
+
+[node name="Bar" type="MeshInstance3D" parent="Fence" unique_id=678970735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 32.27042, 8.444855)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_al3su")
+
+[node name="Bar2" type="MeshInstance3D" parent="Fence" unique_id=1559739300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.637375, 32.30811, 9.687897)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_2y15h")
+
+[node name="Bar3" type="MeshInstance3D" parent="Fence" unique_id=841027899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.18451, 32.340656, 10.74173)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_4nnl2")
+
+[node name="Bar4" type="MeshInstance3D" parent="Fence" unique_id=1998641427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.656525, 32.42111, 11.599869)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_j66p6")
+
+[node name="Bar5" type="MeshInstance3D" parent="Fence" unique_id=370628210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.069, 32.576286, 12.257019)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_jca2o")
+
+[node name="Bar6" type="MeshInstance3D" parent="Fence" unique_id=1306408945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.437897, 32.605637, 12.709122)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_0vwxq")
+
+[node name="Bar7" type="MeshInstance3D" parent="Fence" unique_id=1980678194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.779419, 32.512775, 12.9534)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_vy3xq")
+
+[node name="Bar8" type="MeshInstance3D" parent="Fence" unique_id=603445896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1099854, 32.46074, 12.988342)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_pvmpv")
+
+[node name="Bar9" type="MeshInstance3D" parent="Fence" unique_id=740850831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4460297, 32.392834, 12.813751)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_aen4n")
+
+[node name="Bar10" type="MeshInstance3D" parent="Fence" unique_id=961142565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8039932, 32.109795, 12.430664)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_kvnyg")
+
+[node name="Bar11" type="MeshInstance3D" parent="Fence" unique_id=1417690757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7998505, 31.794573, 11.841476)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_wepmt")
+
+[node name="Bar12" type="MeshInstance3D" parent="Fence" unique_id=182506326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.349434, 31.695936, 11.049805)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_qtuga")
+
+[node name="Bar13" type="MeshInstance3D" parent="Fence" unique_id=1156177967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.829048, 31.68879, 10.060547)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_xx7kq")
+
+[node name="Bar14" type="MeshInstance3D" parent="Fence" unique_id=1828872442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.223396, 31.669384, 8.879791)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_yxy5o")
+
+[node name="Bar15" type="MeshInstance3D" parent="Fence" unique_id=1907251904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.517731, 31.493061, 7.514801)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_f4dd0")
+
+[node name="Bar16" type="MeshInstance3D" parent="Fence" unique_id=744115932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.697891, 31.269365, 5.9740143)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_onrli")
+
+[node name="Bar17" type="MeshInstance3D" parent="Fence" unique_id=94636636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7504425, 31.197197, 4.266922)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_axfin")
+
+[node name="Bar18" type="MeshInstance3D" parent="Fence" unique_id=808438120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.662727, 31.210903, 2.4040527)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_3cn30")
+
+[node name="Bar19" type="MeshInstance3D" parent="Fence" unique_id=1443191906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.422966, 31.067907, 0.39689636)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_ot5lv")
+
+[node name="Bar20" type="MeshInstance3D" parent="Fence" unique_id=1499440463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.020294, 30.925674, -1.7421875)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_4l85n")
+
+[node name="Bar21" type="MeshInstance3D" parent="Fence" unique_id=1356659459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.444862, 30.84985, -4)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_3ksmm")
+
+[node name="Bar22" type="MeshInstance3D" parent="Fence" unique_id=1556899833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.687897, 30.782297, -6.362625)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_6fo8w")
+
+[node name="Bar23" type="MeshInstance3D" parent="Fence" unique_id=913012709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.74173, 30.720863, -8.815491)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_qdcpn")
+
+[node name="Bar24" type="MeshInstance3D" parent="Fence" unique_id=1403435373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.599869, 30.647217, -11.343475)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_0xesx")
+
+[node name="Bar25" type="MeshInstance3D" parent="Fence" unique_id=53844292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.257019, 30.554424, -13.931)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_5wjvd")
+
+[node name="Bar26" type="MeshInstance3D" parent="Fence" unique_id=1133833774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.709122, 30.46131, -16.562103)
+cast_shadow = 0
+visibility_range_end = 100.0
+visibility_range_end_margin = 10.0
+visibility_range_fade_mode = 1
+mesh = SubResource("CylinderMesh_e4ody")
+
+[node name="DeadTrees" type="Node3D" parent="." unique_id=1798119866]
+
+[node name="Trunks" type="StaticBody3D" parent="DeadTrees" unique_id=821566954]
+
+[node name="Trunk1" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1936857565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.48999, 31.164476, -10.330795)
+shape = SubResource("CylinderShape3D_aj8oa")
+
+[node name="Trunk2" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1586135633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.35643, 30.309261, -60.232727)
+shape = SubResource("CylinderShape3D_yrpxp")
+
+[node name="Trunk3" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=873164814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.772232, 30.705048, -19.132996)
+shape = SubResource("CylinderShape3D_lub04")
+
+[node name="Trunk4" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1497883684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.142242, 31.192131, -31.174042)
+shape = SubResource("CylinderShape3D_fekl0")
+
+[node name="Trunk5" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=944741848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.60254, 36.087254, 4.355835)
+shape = SubResource("CylinderShape3D_lvdtw")
+
+[node name="Trunk6" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=473458904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.413605, 33.289024, 7.02623)
+shape = SubResource("CylinderShape3D_h7s7y")
+
+[node name="Trunk7" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=999898579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.06561, 35.49732, -10.175339)
+shape = SubResource("CylinderShape3D_8ivce")
+
+[node name="Trunk8" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1182507732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.408875, 31.079872, 62.25595)
+shape = SubResource("CylinderShape3D_px4eg")
+
+[node name="Trunk9" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=555911485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.377678, 31.200867, 20.932419)
+shape = SubResource("CylinderShape3D_el6xw")
+
+[node name="Trunk10" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=328800818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.071716, 29.323227, -37.41948)
+shape = SubResource("CylinderShape3D_a6poa")
+
+[node name="Trunk11" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1037689664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.05847, 34.047626, 0.07400513)
+shape = SubResource("CylinderShape3D_64wap")
+
+[node name="Trunk12" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1855050617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.55883, 31.131319, -25.360748)
+shape = SubResource("CylinderShape3D_xxfp5")
+
+[node name="Trunk13" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1855001703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.212498, 31.667595, 15.028137)
+shape = SubResource("CylinderShape3D_qjqq4")
+
+[node name="Trunk14" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1635166332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.584412, 30.510141, -58.11792)
+shape = SubResource("CylinderShape3D_tto6x")
+
+[node name="Trunk15" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=775483721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.079346, 30.915615, -23.315262)
+shape = SubResource("CylinderShape3D_3qlmk")
+
+[node name="Trunk16" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1351062868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.113701, 30.763468, -72.34671)
+shape = SubResource("CylinderShape3D_yaif4")
+
+[node name="TrunkMeshes" type="MultiMeshInstance3D" parent="DeadTrees" unique_id=635085700]
+multimesh = SubResource("MultiMesh_p6k6j")
+
+[node name="Label" type="Label3D" parent="." unique_id=118639308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 60.517654, 0)
+pixel_size = 0.014
+billboard = 1
+modulate = Color(1, 0.97, 0.9, 1)
+outline_modulate = Color(0.25, 0.15, 0.2, 0.85)
+text = "Vampire Estate"
+font_size = 160
+outline_size = 14
