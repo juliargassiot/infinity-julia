@@ -85,9 +85,7 @@ In progress on a branch. The map is in `game/world/`; terrain shapes and paths b
 A familiar, a magical pet, follows the player around the world: it trots after her, waits, plays idle animations and reacts to her (happy when she returns, curious about objects). The player picks one of several forms, each with its own animal vibe (fox-like, cat-like and others) but all clearly magical, and customizes its colors. Build the follow behavior and the first two forms with models, rigs and animations, plus the choice and coloring screen. Cute but able to look a little eerie at night.
 
 ### Open questions
-- Which forms beyond fox and cat: owl, bunny, dragonling, moth?
-- Does the familiar help in quests or battles, or is it a companion only?
-- Is it chosen in the character creator or met in a quest?
+- None. Settled: six forms (fox, cat, owl, bunny, dragonling, moth); this item builds fox and cat, the rest follow. It fights alongside her in battles (item 9), and she meets it in an early quest in Crossroads Village (item 10).
 
 ### Status
 Not started. Movement is done in `game/player/`.
@@ -109,7 +107,7 @@ Not started. Needs item 3.
 Build the event system and the first event, a witch marsh gathering, as the game's version of a farming-sim festival. The player is invited through a quest, arrives at a decorated venue with a dress code, mingles with NPCs in conversations where good answers win favor, and is judged on how well her outfit fits the event's style tags. A strong showing earns standing toward a title like "It Girl". Each later race gets its own event built on the same system.
 
 ### Open questions
-- What is the title called?
+- The title's name is decided later; "It Girl" is a placeholder.
 - Do events happen on a calendar, like festivals, or when the story reaches them?
 - Can the player fail an event and try again?
 
