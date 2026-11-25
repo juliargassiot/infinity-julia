@@ -10,7 +10,7 @@ from pathlib import Path, PurePosixPath
 ROOT = Path(__file__).resolve().parent.parent
 HOOKS_PATH = "tools/hooks"
 
-GLOBAL_DOCS = {"CLAUDE.md", "BACKLOG.md"}
+GLOBAL_DOCS = {"CLAUDE.md", "DEV.md", "BACKLOG.md"}
 DOC_SUFFIXES = {".md", ".markdown", ".mdx", ".txt", ".rst", ".adoc", ".org",
                 ".rtf", ".doc", ".docx", ".odt", ".pdf"}
 DOC_NAMES_WITHOUT_SUFFIX = {"readme", "notes", "todo", "changelog"}
@@ -22,14 +22,13 @@ NOTES_WORDS = 600
 BACKLOG_SECTION_WORDS = 100
 BACKLOG_SECTIONS = ["Task description", "Open questions", "Status"]
 
-NOTES_BLOCK = "Claude’s notes"
+NOTES_POINTER = "@DEV.md"
 IMMUTABLE_BLOCKS = {
     "immutable without Peter’s (Julia’s husband developer) blessing":
-        "ed5cfb0db44a4f0f2736771e61637d7805b6424312f7e729404aab9cdf068550",
+        "db3d166dfdabcf9bdc2cb875d3119aa2fe5584716e776eed2ef781f7302c7a82",
     "immutable without Julia’s permission":
         "ebc2f24f8cb9c70dfe1e76429073420feff2b62a29348239e6a613e71b15448c",
 }
-CLAUDE_MD_BLOCKS = [*IMMUTABLE_BLOCKS, NOTES_BLOCK]
 
 
 def words(text):
@@ -70,8 +69,8 @@ def check_documents():
         if directory == PurePosixPath("."):
             for doc in docs:
                 if doc.name not in GLOBAL_DOCS:
-                    yield (f"{doc}: the only global documents are CLAUDE.md and "
-                           f"BACKLOG.md. Delete it or fold it into one of them.")
+                    yield (f"{doc}: the only global documents are CLAUDE.md, DEV.md "
+                           f"and BACKLOG.md. Delete it or fold it into one of them.")
             continue
         if len(docs) > 1:
             names = ", ".join(sorted(d.name for d in docs))
@@ -86,7 +85,7 @@ def check_documents():
                 yield f"{doc}: {count} words; the limit is {DIRECTORY_DOC_WORDS}."
 
 
-def claude_md_blocks(text):
+def tagged_blocks(text):
     blocks, stray, name, body = {}, [], None, []
     for number, line in enumerate(text.split("\n"), 1):
         if name is None:
@@ -103,24 +102,30 @@ def claude_md_blocks(text):
     return blocks, stray, name
 
 
-def check_claude_md():
-    blocks, stray, unclosed = claude_md_blocks(read("CLAUDE.md"))
+def check_dev_md():
+    blocks, stray, unclosed = tagged_blocks(read("DEV.md"))
     if unclosed:
-        yield f"CLAUDE.md: the <{unclosed}> block is never closed."
+        yield f"DEV.md: the <{unclosed}> block is never closed."
     if stray:
-        yield (f"CLAUDE.md: line {stray[0]} is outside the three blocks; "
-               f"Claude's text belongs inside <{NOTES_BLOCK}>.")
-    if list(blocks) != CLAUDE_MD_BLOCKS:
-        yield ("CLAUDE.md: must hold exactly these blocks in order: "
-               + ", ".join(f"<{b}>" for b in CLAUDE_MD_BLOCKS))
+        yield (f"DEV.md: line {stray[0]} is outside the immutable blocks; "
+               f"Claude's text belongs in CLAUDE.md.")
+    if list(blocks) != list(IMMUTABLE_BLOCKS):
+        yield ("DEV.md: must hold exactly these blocks in order: "
+               + ", ".join(f"<{b}>" for b in IMMUTABLE_BLOCKS))
         return
     for name, expected in IMMUTABLE_BLOCKS.items():
         actual = hashlib.sha256(blocks[name].encode("utf-8")).hexdigest()
         if actual != expected:
-            yield (f"CLAUDE.md: the <{name}> block was changed. Restore it, or if "
+            yield (f"DEV.md: the <{name}> block was changed. Restore it, or if "
                    f"the person it names asked for the change, set its hash in "
                    f"tools/check_docs.py to {actual}")
-    count = words(blocks[NOTES_BLOCK])
+
+
+def check_claude_md():
+    pointer, _, notes = read("CLAUDE.md").partition("\n")
+    if NOTES_POINTER not in pointer:
+        yield f"CLAUDE.md: the first line must point to {NOTES_POINTER}."
+    count = words(notes)
     if count > NOTES_WORDS:
         yield f"CLAUDE.md: Claude's notes are {count} words; the limit is {NOTES_WORDS}."
 
@@ -174,7 +179,8 @@ def main():
     event = hook_event() if "--hook" in sys.argv else {}
 
     errors = []
-    for check in (check_documents, check_claude_md, check_backlog, check_git_hook):
+    for check in (check_documents, check_dev_md, check_claude_md, check_backlog,
+                  check_git_hook):
         try:
             errors.extend(check())
         except OSError as error:
@@ -182,7 +188,7 @@ def main():
     if not errors:
         return 0
 
-    print("Documentation rules in CLAUDE.md are violated. Fix these before "
+    print("Documentation rules in DEV.md are violated. Fix these before "
           "continuing:", file=sys.stderr)
     for error in errors:
         print(f"- {error}", file=sys.stderr)
