@@ -1,15 +1,15 @@
 # Backlog
 
-## 3. Player character base
+## 17. Player character look, second pass
 
 ### Task description
-Sculpt, retopologize and rig an original anime-styled player body in Blender: doll-like face, clean topology, face rig for expressions, and one flowing hairstyle with bones for hair motion. Give her soft, slightly translucent PBR skin and stylized hair highlights in Godot, with skin and hair color exposed as parameters for the character creator. Import into Godot with an idle animation and check close-up screenshots. Placeholder outfit only.
+The base in `game/characters/player/` works (rig, sockets, color parameters, animations) but needs to reach Infinity Nikki quality: a more dimensional face with stronger lips and natural eyes, fuller and softer hair with clean stylized highlights, a clearer thin-hourglass figure between Nikki and Bayonetta, relaxed hands, warmer skin that also works for dark tones, and smoother walk and run cycles. Then swap her into `game/player/player.tscn` in place of the capsule, so she appears on the Deck.
 
 ### Open questions
-- None. Settled: the player is always a young woman, as in Infinity Nikki.
+- Julia's feedback on the first renders.
 
 ### Status
-In progress on a branch.
+Not started. First renders were sent to Julia for review.
 
 ## 6. Character creator
 
@@ -21,7 +21,7 @@ At the start of the game, the player picks a magical race (werewolf, vampire, me
 - Besides movement, does race change abilities?
 
 ### Status
-Not started. Needs item 3. Save into the `Save` autoload (`game/save/`) with its own section.
+Not started. The character is in `game/characters/player/`, with color parameters and sockets. Save into the `Save` autoload (`game/save/`) with its own section.
 
 ## 7. Race designs
 
@@ -32,7 +32,7 @@ Design each race's look on the base character, in the Infinity Nikki style with 
 - Can werewolves fully transform, and do mermaids get legs on land?
 
 ### Status
-Not started. Needs item 3. Probably splits into one item per race after the design sheets.
+Not started. The character is in `game/characters/player/`, with color parameters and sockets. Probably splits into one item per race after the design sheets.
 
 ## 8. Area moods
 
@@ -55,7 +55,7 @@ A first combat prototype: the player fights with magic suited to their race, aga
 - How scary is too scary: unsettling, or real horror?
 
 ### Status
-Not started. Needs items 3 and 8.
+Not started. Needs item 8.
 
 ## 12. Seal the map borders
 
@@ -88,7 +88,7 @@ Fashion is central: many outfits over time, in slots for underclothes, bottoms, 
 - How are new pieces earned: bought, crafted at the tailor, quest rewards, or all three?
 
 ### Status
-Not started. Needs item 3. Quest rewards arrive as `item` grants on `Quests.granted` (`game/quests/`); the wardrobe should take them.
+Not started. The character is in `game/characters/player/`, with color parameters and sockets. Quest rewards arrive as `item` grants on `Quests.granted` (`game/quests/`); the wardrobe should take them.
 
 ## 15. First race social event
 
