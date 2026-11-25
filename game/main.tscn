@@ -1,56 +1,334 @@
 [gd_scene format=3]
 
-[sub_resource type="ProceduralSkyMaterial" id="sky_material"]
-sky_top_color = Color(0.32, 0.47, 0.78, 1)
-sky_horizon_color = Color(1, 0.8, 0.62, 1)
-ground_bottom_color = Color(0.3, 0.26, 0.24, 1)
-ground_horizon_color = Color(1, 0.8, 0.62, 1)
+[ext_resource type="Script" path="res://world/world.gd" id="1_5vw27"]
+[ext_resource type="Script" path="res://world/terrain/terrain.gd" id="2_kek77"]
+[ext_resource type="Shader" path="res://world/terrain/terrain.gdshader" id="3_4c57u"]
+[ext_resource type="Script" path="res://world/terrain/terrain_shape.gd" id="4_efxa6"]
+[ext_resource type="Script" path="res://world/terrain/terrain_path.gd" id="5_dg77c"]
+[ext_resource type="Material" path="res://world/blockout/water.tres" id="6_ycdy4"]
+[ext_resource type="Script" path="res://world/world_area.gd" id="7_w48qg"]
+[ext_resource type="PackedScene" path="res://player/player.tscn" id="8_vivmo"]
 
-[sub_resource type="Sky" id="sky"]
-sky_material = SubResource("sky_material")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2cqfq"]
+sky_top_color = Color(0.22, 0.42, 0.82, 1)
+sky_horizon_color = Color(1, 0.8, 0.64, 1)
+sky_curve = 0.12
+ground_bottom_color = Color(0.36, 0.33, 0.32, 1)
+ground_horizon_color = Color(1, 0.8, 0.64, 1)
+sun_angle_max = 20.0
+sun_curve = 0.08
 
-[sub_resource type="Environment" id="environment"]
+[sub_resource type="Sky" id="Sky_yaehf"]
+sky_material = SubResource("ProceduralSkyMaterial_2cqfq")
+
+[sub_resource type="Environment" id="Environment_074og"]
 background_mode = 2
-sky = SubResource("sky")
+sky = SubResource("Sky_yaehf")
+ambient_light_source = 3
+ambient_light_color = Color(0.86, 0.78, 0.8, 1)
+ambient_light_sky_contribution = 0.75
 tonemap_mode = 3
 glow_enabled = true
+glow_intensity = 0.6
+glow_bloom = 0.06
+glow_hdr_threshold = 1.1
+fog_enabled = true
+fog_light_color = Color(0.96, 0.8, 0.68, 1)
+fog_sun_scatter = 0.2
+fog_density = 0.0012
+fog_aerial_perspective = 0.4
+fog_sky_affect = 0.1
+fog_height = 3.0
+fog_height_density = 0.01
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.02
-volumetric_fog_albedo = Color(1, 0.9, 0.8, 1)
+volumetric_fog_density = 0.004
+volumetric_fog_albedo = Color(1, 0.92, 0.82, 1)
+volumetric_fog_anisotropy = 0.4
+volumetric_fog_length = 80.0
+volumetric_fog_ambient_inject = 0.4
+adjustment_enabled = true
+adjustment_saturation = 1.15
 
-[sub_resource type="StandardMaterial3D" id="ground_material"]
-albedo_color = Color(0.45, 0.62, 0.34, 1)
-roughness = 0.9
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cegan"]
+frequency = 0.02
 
-[sub_resource type="PlaneMesh" id="ground_mesh"]
-material = SubResource("ground_material")
-size = Vector2(60, 60)
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_82xsv"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_cegan")
+seamless = true
 
-[sub_resource type="StandardMaterial3D" id="sphere_material"]
-albedo_color = Color(0.95, 0.72, 0.8, 1)
-roughness = 0.35
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_getpj"]
+render_priority = 0
+shader = ExtResource("3_4c57u")
+shader_parameter/terrain_size = null
+shader_parameter/skirt = null
+shader_parameter/variation = SubResource("NoiseTexture2D_82xsv")
+shader_parameter/variation_scale = null
+shader_parameter/grass_color = null
+shader_parameter/meadow_color = null
+shader_parameter/rock_color = null
+shader_parameter/sand_color = null
+shader_parameter/bed_color = null
+shader_parameter/road_color = null
+shader_parameter/road_softness = null
 
-[sub_resource type="SphereMesh" id="sphere_mesh"]
-material = SubResource("sphere_material")
+[sub_resource type="Curve3D" id="Curve3D_ryguw"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -11, 0, 0, 0, 0, 0, 0, 4.2095175, 0, -10.162675, 0, 0, 0, 0, 0, 0, 7.7781744, 0, -7.7781744, 0, 0, 0, 0, 0, 0, 10.162675, 0, -4.2095175, 0, 0, 0, 0, 0, 0, 11, 0, -6.735335e-16, 0, 0, 0, 0, 0, 0, 10.162675, 0, 4.2095175, 0, 0, 0, 0, 0, 0, 7.7781744, 0, 7.7781744, 0, 0, 0, 0, 0, 0, 4.2095175, 0, 10.162675, 0, 0, 0, 0, 0, 0, 1.347067e-15, 0, 11, 0, 0, 0, 0, 0, 0, -4.2095175, 0, 10.162675, 0, 0, 0, 0, 0, 0, -7.7781744, 0, 7.7781744, 0, 0, 0, 0, 0, 0, -10.162675, 0, 4.2095175, 0, 0, 0, 0, 0, 0, -11, 0, 2.0206005e-15, 0, 0, 0, 0, 0, 0, -10.162675, 0, -4.2095175, 0, 0, 0, 0, 0, 0, -7.7781744, 0, -7.7781744, 0, 0, 0, 0, 0, 0, -4.2095175, 0, -10.162675, 0, 0, 0, 0, 0, 0, -2.694134e-15, 0, -11),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 17
 
-[node name="Main" type="Node3D"]
+[sub_resource type="Curve3D" id="Curve3D_d13ii"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 45, 0, 0, 0, 0, 0, 0, -5, 0, 74, 0, 0, 0, 0, 0, 0, -20, 0, 110, 0, 0, 0, 0, 0, 0, -48, 0, 158, 0, 0, 0, 0, 0, 0, -72, 0, 197),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("environment")
+[sub_resource type="Curve3D" id="Curve3D_1u8w0"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -18, 0, 0, 0, 0, 0, 0, 0, 0, -60, 0, -3, 0, 0, 0, 0, 0, 0, -110, 0, 2, 0, 0, 0, 0, 0, 0, -160, 0, 12, 0, 0, 0, 0, 0, 0, -222, 0, 22),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.707, -0.183, 0.683, 0, 0.966, 0.259, -0.707, -0.183, 0.683, 0, 5, 0)
-light_color = Color(1, 0.86, 0.68, 1)
-light_energy = 1.6
+[sub_resource type="Curve3D" id="Curve3D_0odxb"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 60, 0, 6, 0, 0, 0, 0, 0, 0, 110, 0, -2, 0, 0, 0, 0, 0, 0, 160, 0, 18, 0, 0, 0, 0, 0, 0, 226, 0, 40),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_lswn8"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12, 0, -14, 0, 0, 0, 0, 0, 0, -40, 0, -50, 0, 0, 0, 0, 0, 0, -75, 0, -95, 0, 0, 0, 0, 0, 0, -110, 0, -140, 0, 0, 0, 0, 0, 0, -148, 0, -176),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_a6jrf"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 9, 0, -16, 0, 0, 0, 0, 0, 0, 35, 0, -60, 0, 0, 0, 0, 0, 0, 60, 0, -110, 0, 0, 0, 0, 0, 0, 90, 0, -160, 0, 0, 0, 0, 0, 0, 125, 0, -217),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_xuqvo"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 330, -1.2, 175, 0, 0, 0, 0, 0, 0, 250, -1.2, 150, 0, 0, 0, 0, 0, 0, 180, -1.2, 132, 0, 0, 0, 0, 0, 0, 120, -1.2, 108, 0, 0, 0, 0, 0, 0, 70, -1.2, 92, 0, 0, 0, 0, 0, 0, 30, -1.2, 84, 0, 0, 0, 0, 0, 0, -6, -1.2, 78, 0, 0, 0, 0, 0, 0, -45, -1.2, 90, 0, 0, 0, 0, 0, 0, -90, -1.2, 118, 0, 0, 0, 0, 0, 0, -140, -1.2, 160, 0, 0, 0, 0, 0, 0, -200, -1.2, 215, 0, 0, 0, 0, 0, 0, -260, -1.2, 262),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 12
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qsp4k"]
+material = ExtResource("6_ycdy4")
+size = Vector2(3000, 3000)
+
+[node name="Main" type="Node3D" unique_id=221075990]
+script = ExtResource("1_5vw27")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1992285581]
+environment = SubResource("Environment_074og")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=467919937]
+transform = Transform3D(0.34202015, 0.22733223, -0.91177976, 0, 0.9702957, 0.24192192, 0.9396926, -0.08274217, 0.33186072, 0, 40, 0)
+light_color = Color(1, 0.8, 0.6, 1)
+light_energy = 2.4
 shadow_enabled = true
+directional_shadow_mode = 1
+directional_shadow_max_distance = 160.0
 
-[node name="Ground" type="MeshInstance3D" parent="."]
-mesh = SubResource("ground_mesh")
+[node name="Terrain" type="Node3D" parent="." unique_id=2119722719]
+script = ExtResource("2_kek77")
+material = SubResource("ShaderMaterial_getpj")
 
-[node name="Sphere" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("sphere_mesh")
+[node name="Shapes" type="Node3D" parent="Terrain" unique_id=945463771]
 
-[node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.966, 0.259, 0, -0.259, 0.966, 0, 1.6, 4)
-fov = 50.0
+[node name="Village" type="Marker3D" parent="Terrain/Shapes" unique_id=1144782807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+script = ExtResource("4_efxa6")
+radius = 75.0
+roughness = 0.4
+
+[node name="WindmillKnoll" type="Marker3D" parent="Terrain/Shapes" unique_id=6017267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 11, -28)
+script = ExtResource("4_efxa6")
+radius = 20.0
+
+[node name="NorthHill" type="Marker3D" parent="Terrain/Shapes" unique_id=1085354855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, -150)
+script = ExtResource("4_efxa6")
+roughness = 5.0
+
+[node name="NortheastHill" type="Marker3D" parent="Terrain/Shapes" unique_id=1666423745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 16, -70)
+script = ExtResource("4_efxa6")
+radius = 45.0
+roughness = 3.0
+
+[node name="SoutheastHill" type="Marker3D" parent="Terrain/Shapes" unique_id=1280625509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 14, 170)
+script = ExtResource("4_efxa6")
+radius = 55.0
+roughness = 3.0
+
+[node name="SouthwestLowland" type="Marker3D" parent="Terrain/Shapes" unique_id=2049856172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 3, 85)
+script = ExtResource("4_efxa6")
+radius = 45.0
+roughness = 1.0
+
+[node name="WestHill" type="Marker3D" parent="Terrain/Shapes" unique_id=356630914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 14, -60)
+script = ExtResource("4_efxa6")
+radius = 50.0
+roughness = 4.0
+
+[node name="WitchMarsh" type="Marker3D" parent="Terrain/Shapes" unique_id=40578336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0.4, 197)
+script = ExtResource("4_efxa6")
+radius = 90.0
+roughness = 1.4
+
+[node name="Beach" type="Marker3D" parent="Terrain/Shapes" unique_id=1090449154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 1.2, 20)
+script = ExtResource("4_efxa6")
+radius = 40.0
+roughness = 0.4
+
+[node name="Headland" type="Marker3D" parent="Terrain/Shapes" unique_id=793090723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 9, -50)
+script = ExtResource("4_efxa6")
+radius = 30.0
+roughness = 1.0
+
+[node name="Sea" type="Marker3D" parent="Terrain/Shapes" unique_id=2108776018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330, -8, 30)
+script = ExtResource("4_efxa6")
+radius = 110.0
+
+[node name="SouthwestSea" type="Marker3D" parent="Terrain/Shapes" unique_id=662224687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -300, -6, 290)
+script = ExtResource("4_efxa6")
+radius = 110.0
+
+[node name="FaeGlade" type="Marker3D" parent="Terrain/Shapes" unique_id=1848629293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226, 9, 40)
+script = ExtResource("4_efxa6")
+radius = 80.0
+roughness = 2.0
+
+[node name="WerewolfForest" type="Marker3D" parent="Terrain/Shapes" unique_id=2025435225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148, 14, -176)
+script = ExtResource("4_efxa6")
+radius = 90.0
+roughness = 4.0
+
+[node name="VampireCrag" type="Marker3D" parent="Terrain/Shapes" unique_id=479575923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 30, -217)
+script = ExtResource("4_efxa6")
+radius = 70.0
+roughness = 3.0
+
+[node name="NortheastMountains" type="Marker3D" parent="Terrain/Shapes" unique_id=565172157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 42, -300)
+script = ExtResource("4_efxa6")
+radius = 100.0
+roughness = 6.0
+
+[node name="NorthwestMountains" type="Marker3D" parent="Terrain/Shapes" unique_id=1291288006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -300, 32, -300)
+script = ExtResource("4_efxa6")
+radius = 100.0
+roughness = 6.0
+
+[node name="SoutheastHills" type="Marker3D" parent="Terrain/Shapes" unique_id=932828462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 20, 300)
+script = ExtResource("4_efxa6")
+radius = 100.0
+roughness = 5.0
+
+[node name="Paths" type="Node3D" parent="Terrain" unique_id=1165899615]
+
+[node name="Square" type="Path3D" parent="Terrain/Paths" unique_id=1682769366]
+curve = SubResource("Curve3D_ryguw")
+script = ExtResource("5_dg77c")
+width = 18.0
+falloff = 4.0
+
+[node name="WitchMarshRoad" type="Path3D" parent="Terrain/Paths" unique_id=735370270]
+curve = SubResource("Curve3D_d13ii")
+script = ExtResource("5_dg77c")
+falloff = 7.0
+
+[node name="MermaidCoastRoad" type="Path3D" parent="Terrain/Paths" unique_id=88480212]
+curve = SubResource("Curve3D_1u8w0")
+script = ExtResource("5_dg77c")
+falloff = 7.0
+
+[node name="FaeGladeRoad" type="Path3D" parent="Terrain/Paths" unique_id=757293020]
+curve = SubResource("Curve3D_0odxb")
+script = ExtResource("5_dg77c")
+falloff = 7.0
+
+[node name="WerewolfForestRoad" type="Path3D" parent="Terrain/Paths" unique_id=1863263101]
+curve = SubResource("Curve3D_lswn8")
+script = ExtResource("5_dg77c")
+falloff = 7.0
+
+[node name="VampireEstateRoad" type="Path3D" parent="Terrain/Paths" unique_id=1693648665]
+curve = SubResource("Curve3D_a6jrf")
+script = ExtResource("5_dg77c")
+falloff = 7.0
+
+[node name="Stream" type="Path3D" parent="Terrain/Paths" unique_id=1706664940]
+curve = SubResource("Curve3D_xuqvo")
+script = ExtResource("5_dg77c")
+width = 7.0
+falloff = 5.0
+follows_ground = false
+paved = false
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=1441232107]
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_qsp4k")
+
+[node name="CrossroadsVillage" type="Node3D" parent="." unique_id=203893571]
+script = ExtResource("7_w48qg")
+scene = "res://world/areas/crossroads_village.tscn"
+radius = 170.0
+
+[node name="WitchMarsh" type="Node3D" parent="." unique_id=1191414650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 197)
+script = ExtResource("7_w48qg")
+scene = "res://world/areas/witch_marsh.tscn"
+radius = 90.0
+
+[node name="MermaidCoast" type="Node3D" parent="." unique_id=282401418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235, 0, 20)
+script = ExtResource("7_w48qg")
+scene = "res://world/areas/mermaid_coast.tscn"
+radius = 80.0
+
+[node name="FaeGlade" type="Node3D" parent="." unique_id=107453827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226, 0, 40)
+script = ExtResource("7_w48qg")
+scene = "res://world/areas/fae_glade.tscn"
+radius = 85.0
+
+[node name="WerewolfForest" type="Node3D" parent="." unique_id=2012767586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148, 0, -176)
+script = ExtResource("7_w48qg")
+scene = "res://world/areas/werewolf_forest.tscn"
+radius = 95.0
+
+[node name="VampireEstate" type="Node3D" parent="." unique_id=729569789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, -217)
+script = ExtResource("7_w48qg")
+scene = "res://world/areas/vampire_estate.tscn"
+radius = 80.0
+
+[node name="Player" parent="." unique_id=580084734 instance=ExtResource("8_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.005528, 24)
