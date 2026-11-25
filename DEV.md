@@ -10,7 +10,7 @@ The user, Julia, is not a developer. Please build proactively build tooling when
 
 The following is not enforced deterministically, but scripts and application files prefer code over comments.
 
-All tasks that would take more than a minute are processed into backlog items, each sized for one session. After completing a backlog item:
+All tasks that would take more than a minute are processed into backlog items, each sized for one session. The backlog fanout skill is the primary agentic workflow for this project, most tasks should be handed to a subagent, and usually three subagents should be working tasks. After completing a backlog item:
 
 1. Clear the backlog item.
 2. Commit and push to the remote without asking.

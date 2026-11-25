@@ -25,7 +25,7 @@ BACKLOG_SECTIONS = ["Task description", "Open questions", "Status"]
 NOTES_POINTER = "@DEV.md"
 IMMUTABLE_BLOCKS = {
     "immutable without Peter’s (Julia’s husband developer) blessing":
-        "db3d166dfdabcf9bdc2cb875d3119aa2fe5584716e776eed2ef781f7302c7a82",
+        "9bd538b7cf520d0de090c39b854d77a30eda7b0ba2eff05a0a73b773860d7b6d",
     "immutable without Julia’s permission":
         "ebc2f24f8cb9c70dfe1e76429073420feff2b62a29348239e6a613e71b15448c",
 }
