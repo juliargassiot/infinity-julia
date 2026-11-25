@@ -6,10 +6,10 @@
 The base in `game/characters/player/` works (rig, sockets, color parameters, animations) but needs to reach Infinity Nikki quality: a more dimensional face with stronger lips and natural eyes, fuller and softer hair with clean stylized highlights, a clearer thin-hourglass figure between Nikki and Bayonetta, relaxed hands, warmer skin that also works for dark tones, and smoother walk and run cycles. Then swap her into `game/player/player.tscn` in place of the capsule, so she appears on the Deck.
 
 ### Open questions
-- Julia's feedback on the first renders.
+- None. Julia agrees with this list.
 
 ### Status
-Not started. First renders were sent to Julia for review.
+In progress on a branch.
 
 ## 6. Character creator
 
