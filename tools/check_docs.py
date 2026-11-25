@@ -162,7 +162,8 @@ def check_backlog():
 
 
 def check_git_hook():
-    if git("config", "--get", "core.hooksPath").strip() != HOOKS_PATH:
+    configured = git("config", "--get", "core.hooksPath").strip().replace("\\", "/")
+    if not configured.rstrip("/").endswith(HOOKS_PATH):
         yield (f"The pre-commit hook is not installed. "
                f"Run: git config core.hooksPath {HOOKS_PATH}")
 
