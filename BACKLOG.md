@@ -93,7 +93,7 @@ Not started. Movement is done in `game/player/`.
 ## 14. Wardrobe and outfits
 
 ### Task description
-The heart of the large fashion element: many outfits over time, worn in slots for underclothes, bottoms, tops, dresses and one-pieces, socks, shoes, necklace, bracelets on each wrist, arm cuffs on each bicep, a multi-ring set on each hand, earrings, facial jewelry and hairstyles. Pieces skin to the character's skeleton, move with cloth physics and hide covered body parts. Build the slot system, a wardrobe screen, the sparkly outfit-change effect, and style tags (elegant, gothic, cute, wild, ethereal) that events judge. Make three complete starter outfits in different styles.
+Fashion is central: many outfits over time, in slots for underclothes, bottoms, tops, dresses and one-pieces, socks, shoes, necklace, bracelets on each wrist, arm cuffs on each bicep, a multi-ring set on each hand, earrings, facial jewelry, head accessories and hairstyles, plus body features (fairy, feathered or bat wings, halos, horns) on their own sockets. Pieces skin to the character's skeleton, move with cloth physics and hide covered body parts. Build the slot system, a wardrobe screen, the sparkly outfit-change effect, and style tags (elegant, gothic, cute, wild, ethereal) that events judge. Make three starter outfits in different styles.
 
 ### Open questions
 - How are new pieces earned: bought, crafted at the tailor, quest rewards, or all three?
