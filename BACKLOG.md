@@ -1,12 +1,13 @@
 # Backlog
 
-## 1. Confirm the Steam Deck install on the real Deck
+## 1. Build stamp and frame-rate readout on the Deck
 
 ### Task description
-Julia runs the install line once on her Steam Deck. Confirm the game appears and runs in Gaming Mode, then fix whatever the real Deck shows that the Linux check could not cover: the Steam library entry, the update progress window, the background update timer and fullscreen.
+Show the build version and the frame rate in a corner of the screen, toggled with a button, so Julia can tell which build the Deck is running and whether it holds 60 fps. Use the first push of this change to confirm that the Deck updates itself: Julia starts the game and sees the new stamp.
 
 ### Open questions
-- Does the game show up under Non-Steam in Gaming Mode after the install?
+- Which Deck button toggles the readout?
+- Does the update progress window appear in Gaming Mode?
 
 ### Status
-Built and published; every push to `main` publishes a build the Deck fetches by itself. Install, update and game start pass on a GitHub Linux runner. Not yet run on the Deck. The line, typed in Konsole in Desktop Mode: `curl https://juliargassiot.github.io/infinity-julia/deck|sh`
+Not started. The install is confirmed on Julia's Deck; an automatic update has not been observed there yet.
