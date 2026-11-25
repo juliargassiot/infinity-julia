@@ -727,7 +727,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.48999, 31.164476, -10.330
 shape = SubResource("CylinderShape3D_aj8oa")
 
 [node name="Trunk2" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1586135633]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.35643, 30.309261, -60.232727)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.35643, 30.229261, -60.232727)
 shape = SubResource("CylinderShape3D_yrpxp")
 
 [node name="Trunk3" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=873164814]
@@ -739,7 +739,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.142242, 31.192131, -31.17
 shape = SubResource("CylinderShape3D_fekl0")
 
 [node name="Trunk5" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=944741848]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.60254, 36.087254, 4.355835)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.60254, 34.517254, 4.355835)
 shape = SubResource("CylinderShape3D_lvdtw")
 
 [node name="Trunk6" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=473458904]
@@ -747,7 +747,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.413605, 33.289024, 7.02623
 shape = SubResource("CylinderShape3D_h7s7y")
 
 [node name="Trunk7" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=999898579]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.06561, 35.49732, -10.175339)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.06561, 34.29732, -10.175339)
 shape = SubResource("CylinderShape3D_8ivce")
 
 [node name="Trunk8" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1182507732]
@@ -763,7 +763,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.071716, 29.323227, -37.41
 shape = SubResource("CylinderShape3D_a6poa")
 
 [node name="Trunk11" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1037689664]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.05847, 34.047626, 0.07400513)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.05847, 33.487626, 0.07400513)
 shape = SubResource("CylinderShape3D_64wap")
 
 [node name="Trunk12" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1855050617]
@@ -783,7 +783,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.079346, 30.915615, -23.31
 shape = SubResource("CylinderShape3D_3qlmk")
 
 [node name="Trunk16" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1351062868]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.113701, 30.763468, -72.34671)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.113701, 53.103468, -72.34671)
 shape = SubResource("CylinderShape3D_yaif4")
 
 [node name="TrunkMeshes" type="MultiMeshInstance3D" parent="DeadTrees" unique_id=635085700]

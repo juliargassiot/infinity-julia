@@ -32,7 +32,7 @@ Design each race's look on the base character, in the Infinity Nikki style with 
 - Can werewolves fully transform, and do mermaids get legs on land?
 
 ### Status
-Not started. The character is in `game/characters/player/`, with color parameters and sockets. Probably splits into one item per race after the design sheets.
+Not started. The character is in `game/characters/player/`, with color parameters and sockets. Probably splits into one item per race after the design sheets. Mermaid swimming must bypass `game/world/deep_water.gd`.
 
 ## 8. Area moods
 
@@ -56,17 +56,6 @@ A first combat prototype: the player fights with magic suited to their race, aga
 
 ### Status
 Not started. Needs item 8.
-
-## 12. Seal the map borders
-
-### Task description
-Gates close the roads to locked lands, but a player can still glide over the stream ravine elsewhere, climb the gentler hills around a gate, or walk off the map edge. Shape the terrain and scenery around each gate and along the map border (cliffs, thick woods, deep water) so locked lands stay out of reach and the edge never shows, without invisible walls where possible. Verify with drive.gd runs that try to get around each gate.
-
-### Open questions
-- None.
-
-### Status
-In progress on a branch. The map is in `game/world/`; terrain shapes and paths bake into one heightmap.
 
 ## 13. Familiar companion
 
@@ -113,3 +102,14 @@ A title screen for the Deck: New game, Continue (from the save in `game/save/`),
 
 ### Status
 Not started. The screens' theme is in `game/ui/`.
+
+## 18. Restore trees and dress the cliffs
+
+### Task description
+Every tree, pine and dead tree in the area scenes, and the vampire gate's thorn wall, is invisible: their MultiMeshes were saved without instance data, so only trunk colliders remain. Rebuild the trees from those colliders and redo the thorn wall, in a way that saves correctly. Then dress the new cliff ridges with rock meshes, which hide the stair-stepped heightmap shadows and give storybook silhouettes. Turn the map-sealing analysis into a script in `tools/run/` that re-checks reachability after terrain edits.
+
+### Open questions
+- None.
+
+### Status
+In progress on a branch. Ridges and deep water are in `game/world/`.

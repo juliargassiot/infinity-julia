@@ -616,7 +616,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.429085, 2.901417, 57.4419
 shape = SubResource("CylinderShape3D_mi3u2")
 
 [node name="Trunk22" type="CollisionShape3D" parent="DeadTrees/Trunks" unique_id=1651023630]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.862831, 2.964275, -74.65859)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.862831, 7.494275, -74.65859)
 shape = SubResource("CylinderShape3D_onngb")
 
 [node name="TrunkMeshes" type="MultiMeshInstance3D" parent="DeadTrees" unique_id=902707228]

@@ -3,7 +3,9 @@ class_name Terrain
 extends Node3D
 ## The ground of the whole map: a heightmap drawn as one displaced grid, with matching collision.
 ## Its TerrainShape and TerrainPath children describe the landscape, and Bake turns them into the
-## heightmap, whose red channel is the height and green the distance to the nearest road edge.
+## heightmap, whose red channel is the height and green the distance to the nearest road edge. Paths
+## press in tree order, each into the ground the earlier ones left, so roads that come after ridges
+## cut passes through them.
 
 const ROAD_DISTANCE_LIMIT := 16.0
 const ROAD_SMOOTHING_POINTS := 6
