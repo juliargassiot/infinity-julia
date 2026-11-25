@@ -21,7 +21,7 @@ At the start of the game, the player picks a magical race (werewolf, vampire, me
 - Besides movement, does race change abilities?
 
 ### Status
-Not started. Needs item 3.
+Not started. Needs item 3. Save into the `Save` autoload (`game/save/`) with its own section.
 
 ## 7. Race designs
 
@@ -57,17 +57,6 @@ A first combat prototype: the player fights with magic suited to their race, aga
 ### Status
 Not started. Needs items 3 and 8.
 
-## 10. Quests and area unlocking
-
-### Task description
-The game is heavily quest-based, and quests unlock the map gradually. Build the quest system: quests written as data files (steps, objectives, rewards, what they unlock), talking to villagers with dialogue choices, a quest journal, objective markers, and saving progress. Completing a quest can open an area gate from item 5. Prove it with a short first quest in Crossroads Village that opens the road to the first area.
-
-### Open questions
-- None. Settled: the main story is decided later, so the first main quest is a placeholder. Side quests are on the notice board from the start; include one example.
-
-### Status
-In progress on a branch. The village and area gates are in `game/world/`; quests open gates with `World.open_gate(id)`, and gate state still needs saving.
-
 ## 12. Seal the map borders
 
 ### Task description
@@ -88,7 +77,7 @@ A familiar, a magical pet, follows the player around the world: it trots after h
 - None. Settled: six forms (fox, cat, owl, bunny, dragonling, moth); this item builds fox and cat, the rest follow. It fights alongside her in battles (item 9), and she meets it in an early quest in Crossroads Village (item 10).
 
 ### Status
-Not started. Movement is done in `game/player/`.
+Not started. Movement is in `game/player/`; quests grant the familiar with a `familiar` grant on `Quests.granted` (`game/quests/`).
 
 ## 14. Wardrobe and outfits
 
@@ -99,7 +88,7 @@ Fashion is central: many outfits over time, in slots for underclothes, bottoms, 
 - How are new pieces earned: bought, crafted at the tailor, quest rewards, or all three?
 
 ### Status
-Not started. Needs item 3.
+Not started. Needs item 3. Quest rewards arrive as `item` grants on `Quests.granted` (`game/quests/`); the wardrobe should take them.
 
 ## 15. First race social event
 
@@ -113,3 +102,14 @@ Build the event system and the first event, a witch marsh gathering, as the game
 
 ### Status
 Not started. Needs items 10 and 14.
+
+## 16. Title screen and storybook font
+
+### Task description
+A title screen for the Deck: New game, Continue (from the save in `game/save/`), and Settings (volume, readout, camera sensitivity). Bundle an open-licence storybook serif font in a `third_party` folder and use it across the game's screens, because SteamOS lacks the laptop's Palatino and Georgia fallbacks. The title screen should be pretty: a slow camera drift over Crossroads Village at golden hour, with the game's name.
+
+### Open questions
+- What is the game called?
+
+### Status
+Not started. The screens' theme is in `game/ui/`.
